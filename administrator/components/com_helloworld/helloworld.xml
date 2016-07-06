@@ -73,9 +73,13 @@
 
         <!-- Core files -->
         <files folder="admin">
-            <filename>helloworld.php</filename>
+            <!-- Admin Main File Copy Section -->
             <filename>index.html</filename>
+            <filename>config.xml</filename>
+            <filename>helloworld.php</filename>
             <filename>controller.php</filename>
+            <filename>access.xml</filename>
+            <!-- SQL files section -->
             <folder>sql</folder>
             <!-- tables files section -->
             <folder>tables</folder>

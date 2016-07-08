@@ -44,16 +44,17 @@ class JFormFieldHelloWorld extends JFormFieldList
 //        $query->where('#__helloworld.published = 1');
         $db->setQuery((string)$query);
         $messages = $db->loadObjectList();
+//        print_r($messages);
         $options = array();
 
         if ($messages) {
             foreach ($messages as $message) {
-                $options[] = JHtml::_('select.option', $message->id, $message->greeting .
-                    ($message->catid ? ' (' . $message->category . ')' : ''));
+                $options[] = JHtml::_('select.option', $message->id, $message->greeting);
             }
         }
 
         $options = array_merge(parent::getOptions(), $options);
+        print_r($options);
 
         return $options;
     }

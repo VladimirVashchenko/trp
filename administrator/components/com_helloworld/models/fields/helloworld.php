@@ -44,7 +44,6 @@ class JFormFieldHelloWorld extends JFormFieldList
 //        $query->where('#__helloworld.published = 1');
         $db->setQuery((string)$query);
         $messages = $db->loadObjectList();
-//        print_r($messages);
         $options = array();
 
         if ($messages) {
@@ -54,7 +53,7 @@ class JFormFieldHelloWorld extends JFormFieldList
         }
 
         $options = array_merge(parent::getOptions(), $options);
-        print_r($options);
+//        print_r($options);
 
         return $options;
     }

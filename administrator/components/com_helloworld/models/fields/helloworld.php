@@ -27,16 +27,21 @@ class JFormFieldHelloWorld extends JFormFieldList
      * Method to get a list of options for a list input.
      *
      * @return  array  An array of JHtml options.
+     *
+     *
+     * Modifying the menu type
+     * The HelloWorld menu type displays a drop down list of all messages.
+     * If the message is categorized, we have to add the category in this display.
      */
     protected function getOptions()
     {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('#__helloworld.id as id,greeting,#__categories.title as category,catid');
+        $query->select('#__helloworld.id as id, #__helloworld.greeting, #__helloworld.catid');
         $query->from('#__helloworld');
-        $query->leftJoin('#__categories on catid=#__categories.id');
+        $query->leftJoin('#__categories on #__helloworld.catid=#__categories.id');
         // Retrieve only published items
-        $query->where('#__helloworld.published = 1');
+//        $query->where('#__helloworld.published = 1');
         $db->setQuery((string)$query);
         $messages = $db->loadObjectList();
         $options = array();

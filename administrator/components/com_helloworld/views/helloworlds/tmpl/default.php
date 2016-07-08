@@ -14,7 +14,15 @@ $listOrder     = $this->escape($this->filter_order);
 $listDirn      = $this->escape($this->filter_order_Dir);
 ?>
 
-<form action="index.php?option=com_helloworld&view=helloworlds" method="post" id="adminForm" name="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_helloworld&view=helloworlds');?>" method="post" id="adminForm" name="adminForm">
+    <?php if (!empty( $this->sidebar)) : ?>
+    <div id="j-sidebar-container" class="span2">
+        <?php echo $this->sidebar; ?>
+    </div>
+    <div id="j-main-container" class="span10">
+        <?php else : ?>
+        <div id="j-main-container">
+            <?php endif;?>
     <div class="row-fluid">
         <div class="span6">
             <?php echo JText::_('COM_HELLOWORLD_HELLOWORLDS_FILTER'); ?>

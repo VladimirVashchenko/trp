@@ -11,6 +11,12 @@ defined('_JEXEC') or die;
 //$document = JFactory::getDocument();
 //$document->addStyleDeclaration('.icon-helloworld {background-image: url(../media/com_helloworld/images/Tux-16x16.png);}');
 
+// Access check: is this user allowed to access the backend of this component?
+if (!JFactory::getUser()->authorise('core.manage', 'com_helloworld'))
+{
+    throw new Exception(JText::_('JERROR_ALERTNOAUTHOR'));
+}
+
 // Require helper file
 JLoader::register('HelloWorldHelper', JPATH_COMPONENT . '/helpers/helloworld.php');
 
@@ -18,7 +24,8 @@ JLoader::register('HelloWorldHelper', JPATH_COMPONENT . '/helpers/helloworld.php
 $controller = JControllerLegacy::getInstance('HelloWorld');
 
 // Perform the Request task
-$controller->execute(JFactory::getApplication()->input->get('task'));
+$input = JFactory::getApplication()->input;
+$controller->execute($input->getCmd('task'));
 
 // Redirect if set by the controller
 $controller->redirect();

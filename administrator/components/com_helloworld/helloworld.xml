@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <extension type="component" version="3.5" method="upgrade">
+
     <name>helloworld</name>
     <creationDate>04.07.2016</creationDate>
     <author>Administrator</author>
@@ -10,23 +11,18 @@
     <version>1.1</version>
     <description>DESCRIPTION</description>
 
-    <!-- Scripts to run on installation -->
-    <scriptfile></scriptfile>
-
     <!-- Runs on install -->
     <install>
         <sql>
             <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
         </sql>
     </install>
-
     <!-- Runs on uninstall -->
     <uninstall>
         <sql>
             <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
         </sql>
     </uninstall>
-
     <!-- Runs on update -->
     <update>
         <schemas>
@@ -61,21 +57,18 @@
     <!-- Back-end files -->
     <administration>
         <!-- Menu entries -->
-        <menu view="com_helloworld">helloworld</menu>
+        <menu link='index.php?option=com_helloworld'>COM_HELLOWORLD_MENU</menu>
         <!-- Administration Menu Section -->
-        <!--<menu link='index.php?option=com_helloworld' img="../media/com_helloworld/images/Tux-16x16.png">COM_HELLOWORLD_MENU</menu>-->
-        <submenu>
-            <!-- Note the folder attribute: This attribute describes the folder
-			to copy FROM in the package to install therefore files copied
-			in this section are copied from /admin/ in the package -->
-            <menu link="option=com_com_helloworld">helloworld</menu>
-        </submenu>
 
         <!-- Core files -->
         <files folder="admin">
-            <filename>helloworld.php</filename>
+            <!-- Admin Main File Copy Section -->
             <filename>index.html</filename>
+            <filename>config.xml</filename>
+            <filename>helloworld.php</filename>
             <filename>controller.php</filename>
+            <filename>access.xml</filename>
+            <!-- SQL files section -->
             <folder>sql</folder>
             <!-- tables files section -->
             <folder>tables</folder>
@@ -93,9 +86,4 @@
             <language tag="en-GB">en-GB/en-GB.com_helloworld.sys.ini</language>
         </languages>
     </administration>
-
-    <!-- Update servers -->
-    <updateservers>
-        <server type="extension" priority="1" name="com_helloworld">http://www.example.com/com_helloworld.xml</server>
-    </updateservers>
 </extension>

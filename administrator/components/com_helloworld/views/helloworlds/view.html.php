@@ -7,6 +7,9 @@
  * Time: 13:19
  */
 
+// No direct access to this file
+defined('_JEXEC') or die('Restricted access');
+
 /**
  * HelloWorlds View
  *
@@ -35,6 +38,8 @@ class HelloWorldViewHelloWorlds extends JViewLegacy
         $this->filter_order_Dir = $app->getUserStateFromRequest($context . 'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
         $this->filterForm = $this->get('FilterForm');
         $this->activeFilters = $this->get('ActiveFilters');
+
+        
         // Check for errors.
         if (count($errors = $this->get('Errors'))) {
             JError::raiseError(500, implode('<br />', $errors));
@@ -47,6 +52,7 @@ class HelloWorldViewHelloWorlds extends JViewLegacy
 
         // Set the toolbar and number of found items
         $this->addToolBar();
+        $this->sidebar = JHtmlSidebar::render();
 
         // Display the template
         parent::display($tpl);
@@ -71,10 +77,13 @@ class HelloWorldViewHelloWorlds extends JViewLegacy
         }
 
         JToolBarHelper::title($title, 'helloworld');
-        JToolBarHelper::deleteList('', 'helloworlds.delete');
-        JToolBarHelper::editList('helloworld.edit');
-        JToolBarHelper::addNew('helloworld.add');
+        JToolBarHelper::addNew('helloworld.add', 'JTOOLBAR_NEW');
+        JToolBarHelper::editList('helloworld.edit', 'JTOOLBAR_EDIT');
+        JToolBarHelper::deleteList('', 'helloworlds.delete', 'JTOOLBAR_DELETE');
+        JToolBarHelper::divider();
+        JToolBarHelper::preferences('com_helloworld');
     }
+
     /**
      * Method to set up the document properties
      *

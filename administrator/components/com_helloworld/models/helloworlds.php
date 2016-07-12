@@ -27,8 +27,11 @@ class HelloWorldModelHelloWorlds extends JModelList
                 'greeting', 'h.greeting',
                 'published', 'h.published',
                 'catid', 'h.catid',
-                'state', 'h.state',
-                'title', 'c.title'
+                'title', 'c.title',
+                'svgpath', 'h.svgpath',
+                'blockmessage', 'h.blockmessage',
+                'menuitem_id', 'h.menuitem_id',
+                'link', 'm.link'
             );
         }
 
@@ -89,6 +92,16 @@ class HelloWorldModelHelloWorlds extends JModelList
 //        return $query;
 //    }
 
+//'id', 'h.id',
+//'greeting', 'h.greeting',
+//'published', 'h.published',
+//'catid', 'h.catid',
+//'title', 'c.title',
+//'svgpath', 'h.svgpath',
+//'blockmessage', 'h.blockmessage',
+//'menuitem_id', 'h.menuitem_id',
+//'link', 'm.link'
+
 
     protected function getListQuery()
     {
@@ -97,19 +110,20 @@ class HelloWorldModelHelloWorlds extends JModelList
 
         $query->select(
             $this->getState(
-                'list.select', 'h.id, h.greeting, h.published, h.catid, c.title, h.state'
+                'list.select', 'h.id, h.greeting, h.published, h.catid, c.title, h.svgpath, h.blockmessage, h.menuitem_id, m.link'
             )
         );
         $query->from($db->quoteName('#__helloworld') . ' AS h');
         $query->join('LEFT', $db->quoteName('#__categories') . ' AS c ON h.catid = c.id');
+        $query->join('LEFT', $db->quoteName('#__menu'). ' AS m ON h.menuitem_id = m.id');
 
         $published = $this->getState('filter.state');
         if (is_numeric($published))
         {
-            $query->where('h.state = '.(int) $published);
+            $query->where('h.published = '.(int) $published);
         } elseif ($published === '')
         {
-            $query->where('(h.state IN (0, 1))');
+            $query->where('(h.published IN (0, 1))');
         }
 
         $orderCol = $this->state->get('list.ordering', 'greeting');

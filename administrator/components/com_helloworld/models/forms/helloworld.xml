@@ -33,7 +33,7 @@
             <option value="0">JOPTION_SELECT_CATEGORY</option>
         </field>
         <field
-                name="menuitem"
+                name="menuitem_id"
                 type="menuitem"
                 label="COM_HELLOWORLD_HELLOWORLD_FIELD_MENU_ITEM_LABEL"
                 description="COM_HELLOWORLD_HELLOWORLD_FIELD_MENU_ITEM_LABEL_DESC"

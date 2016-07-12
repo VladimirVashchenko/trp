@@ -38,16 +38,19 @@ $listDirn      = $this->escape($this->filter_order_Dir);
         <thead>
         <tr>
             <th width="1%"><?php echo JText::_('COM_HELLOWORLD_NUM'); ?></th>
-            <th width="2%">
+            <th width="1%">
                 <?php echo JHtml::_('grid.checkall'); ?>
-            </th>
-            <th width="90%">
-                <?php echo JHtml::_('grid.sort', 'COM_HELLOWORLD_HELLOWORLDS_NAME', 'greeting', $listDirn, $listOrder); ?>
-            </th>
-            <th width="5%">
+            </th><th width="1%">
                 <?php echo JHtml::_('grid.sort', 'COM_HELLOWORLD_PUBLISHED', 'published', $listDirn, $listOrder); ?>
             </th>
-            <th width="2%">
+
+            <th width="60%">
+                <?php echo JHtml::_('grid.sort', 'COM_HELLOWORLD_HELLOWORLDS_NAME', 'greeting', $listDirn, $listOrder); ?>
+            </th>
+            <th width="25%">
+                <?php echo JHtml::_('grid.sort', 'COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_LABEL', 'title', $listDirn, $listOrder); ?>
+            </th>
+            <th width="1%">
                 <?php echo JHtml::_('grid.sort', 'COM_HELLOWORLD_ID', 'id', $listDirn, $listOrder); ?>
             </th>
         </tr>
@@ -63,7 +66,6 @@ $listDirn      = $this->escape($this->filter_order_Dir);
         <?php if (!empty($this->items)) : ?>
             <?php foreach ($this->items as $i => $row) :
                 $link = JRoute::_('index.php?option=com_helloworld&task=helloworld.edit&id=' . $row->id);?>
-
                 <tr>
                     <td>
                         <?php echo $this->pagination->getRowOffset($i); ?>
@@ -71,14 +73,17 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                     <td>
                         <?php echo JHtml::_('grid.id', $i, $row->id); ?>
                     </td>
+                    <td style="text-align: center">
+                        <?php echo JHtml::_('jgrid.published', $row->published, $i, 'helloworlds.', true, 'cb'); ?>
+                    </td>
                     <td>
                         <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_HELLOWORLD_EDIT_HELLOWORLD'); ?>">
                         <?php echo $row->greeting; ?>
                     </td>
-                    <td align="center">
-                        <?php echo JHtml::_('jgrid.published', $row->published, $i, 'helloworlds.', true, 'cb'); ?>
+                    <td>
+                        <?php echo $row->title; ?>
                     </td>
-                    <td align="center">
+                    <td>
                         <?php echo $row->id; ?>
                     </td>
                 </tr>

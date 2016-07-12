@@ -93,6 +93,7 @@ class HelloWorldModelHelloWorld extends JModelItem
                 $this->item->params = $params;
             }
         }
+
         return $this->item;
     }
 }

@@ -9,12 +9,12 @@ defined('_JEXEC') or die;
 JFormHelper::loadFieldClass('list');
 
 /**
- * HelloWorld Form Field class for the HelloWorld component
+ * HelloCategory Form Field class for the HelloWorld component
  *
  * добавляет поле типа список в настройки компонента
  * @since  0.0.1
  */
-class JFormFieldHelloWorld extends JFormFieldList
+class JFormFieldHelloCategory extends JFormFieldList
 {
     /**
      * The field type.
@@ -30,25 +30,24 @@ class JFormFieldHelloWorld extends JFormFieldList
      *
      *
      * Modifying the menu type
-     * The HelloWorld menu type displays a drop down list of all messages.
-     * If the message is categorized, we have to add the category in this display.
+     * The HelloCategory menu type displays a drop down list of all helloworld categories.
      */
     protected function getOptions()
     {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('#__helloworld.id as id, #__helloworld.greeting, #__helloworld.catid');
-        $query->from('#__helloworld');
-        $query->leftJoin('#__categories on #__helloworld.catid=#__categories.id');
+        $query->select('#__categories.id, #__categories.title');
+        $query->from('#__categories');
         // Retrieve only published items
-//        $query->where('#__helloworld.published = 1');
+        $query->where('#__categories.extension = \'com_helloworld\'');
         $db->setQuery((string)$query);
-        $messages = $db->loadObjectList();
+        $categories = $db->loadObjectList();
+//        print_r($messages);
         $options = array();
 
-        if ($messages) {
-            foreach ($messages as $message) {
-                $options[] = JHtml::_('select.option', $message->id, $message->greeting);
+        if ($categories) {
+            foreach ($categories as $category) {
+                $options[] = JHtml::_('select.option', $category->id, $category->title);
             }
         }
 

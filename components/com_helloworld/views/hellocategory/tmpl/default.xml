@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Adds the component to component selection list for menu item assignment-->
+<metadata>
+    <layout title="Categories">
+        <message>Categories</message>
+    </layout>
+    <fields name="request"
+            addfieldpath="/administrator/components/com_helloworld/models/fields">
+        <fieldset name="request">
+            <field
+                name="id"
+                type="hellocategory"
+                label="category"
+                description="A list of categories"
+            />
+        </fieldset>
+    </fields>
+</metadata>

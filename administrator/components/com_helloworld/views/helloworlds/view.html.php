@@ -17,6 +17,7 @@ defined('_JEXEC') or die('Restricted access');
  */
 class HelloWorldViewHelloWorlds extends JViewLegacy
 {
+    protected $items;
     protected $state;
 
 
@@ -72,6 +73,7 @@ class HelloWorldViewHelloWorlds extends JViewLegacy
      */
     protected function addToolBar()
     {
+        $canDo = HelloWorldHelper::getActions();
         $title = JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLDS');
 
         if ($this->pagination->total)
@@ -81,10 +83,20 @@ class HelloWorldViewHelloWorlds extends JViewLegacy
 
         JToolBarHelper::title($title, 'helloworld');
         JToolBarHelper::addNew('helloworld.add', 'JTOOLBAR_NEW');
-        JToolBarHelper::editList('helloworld.edit', 'JTOOLBAR_EDIT');
-        JToolBarHelper::deleteList('', 'helloworlds.delete', 'JTOOLBAR_DELETE');
+
+        if ($canDo->get('core.edit')) {
+            JToolBarHelper::editList('helloworld.edit', 'JTOOLBAR_EDIT');
+        }
+
+        if ($canDo->get('core.delete')) {
+            JToolBarHelper::deleteList('', 'helloworlds.delete', 'JTOOLBAR_DELETE');
+        }
+
         JToolBarHelper::divider();
-        JToolBarHelper::preferences('com_helloworld');
+
+        if ($canDo->get('core.admin')) {
+            JToolBarHelper::preferences('com_helloworld');
+        }
     }
 
     /**

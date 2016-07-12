@@ -35,6 +35,16 @@ class HelloWorldModelHelloWorlds extends JModelList
         parent::__construct($config);
     }
 
+
+    protected function populateState($ordering = null, $direction =
+    null)
+    {
+        $published = $this->getUserStateFromRequest($this->context . '.filter.state', 'filter_state', '', 'string');
+        $this->setState('filter.state', $published);
+        parent::populateState('h.greeting', 'asc');
+    }
+
+
     /**
      * Method to build an SQL query to load the list data.
      *
@@ -80,7 +90,6 @@ class HelloWorldModelHelloWorlds extends JModelList
 //    }
 
 
-
     protected function getListQuery()
     {
         $db = $this->getDbo();
@@ -92,7 +101,16 @@ class HelloWorldModelHelloWorlds extends JModelList
             )
         );
         $query->from($db->quoteName('#__helloworld') . ' AS h');
-        $query->join('LEFT', $db->quoteName('#__categories'). ' AS c ON h.catid = c.id');
+        $query->join('LEFT', $db->quoteName('#__categories') . ' AS c ON h.catid = c.id');
+
+        $published = $this->getState('filter.state');
+        if (is_numeric($published))
+        {
+            $query->where('h.state = '.(int) $published);
+        } elseif ($published === '')
+        {
+            $query->where('(h.state IN (0, 1))');
+        }
 
         $orderCol = $this->state->get('list.ordering', 'greeting');
         $orderDirn = $this->state->get('list.direction', 'asc');

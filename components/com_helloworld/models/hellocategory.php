@@ -92,12 +92,12 @@ class HelloWorldModelHelloCategory extends JModelList
             {
                 // Load the JSON string
                 $params = new JRegistry;
-                $params->loadString($this->item->params, 'JSON');
+//                $params->loadString($this->item->params, 'JSON');
                 print_r($this->item);
                 $this->item->params = $params;
 
                 // Merge global params with item params
-                $params = clone $this->getState('params');
+//                $params = clone $this->getState('params');
                 $params->merge($this->item->params);
                 $this->item->params = $params;
             }

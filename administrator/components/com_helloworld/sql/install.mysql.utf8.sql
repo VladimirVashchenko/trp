@@ -7,7 +7,8 @@ CREATE TABLE `#__helloworld` (
 	`published` tinyint(4) NOT NULL,
 	`catid`	    int(11)    NOT NULL DEFAULT '0',
 	`params`   VARCHAR(1024) NOT NULL DEFAULT '',
-	`state` tinyint(1) NOT NULL default '0',
+	`svgpath` TEXT NOT NULL,
+	`blockmessage` TEXT NOT NULL,
 	PRIMARY KEY (`id`)
 )
 	ENGINE =MyISAM

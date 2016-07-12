@@ -53,6 +53,15 @@ class HelloWorldTableHelloWorld extends JTable
         return parent::bind($array, $ignore);
     }
 
+
+
+    public function store($updateNulls = false)
+    {
+        return parent::store($updateNulls);
+    }
+
+
+
     /**
      * Overloaded load function
      *

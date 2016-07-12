@@ -23,7 +23,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
         <?php else : ?>
         <div id="j-main-container">
             <?php endif;?>
-    <div class="row-fluid">
+    <div class="item-fluid">
         <div class="span6">
             <?php echo JText::_('COM_HELLOWORLD_HELLOWORLDS_FILTER'); ?>
             <?php
@@ -64,27 +64,27 @@ $listDirn      = $this->escape($this->filter_order_Dir);
         </tfoot>
         <tbody>
         <?php if (!empty($this->items)) : ?>
-            <?php foreach ($this->items as $i => $row) :
-                $link = JRoute::_('index.php?option=com_helloworld&task=helloworld.edit&id=' . $row->id);?>
+            <?php foreach ($this->items as $i => $item) :
+                $link = JRoute::_('index.php?option=com_helloworld&task=helloworld.edit&id=' . $item->id);?>
                 <tr>
                     <td>
                         <?php echo $this->pagination->getRowOffset($i); ?>
                     </td>
                     <td>
-                        <?php echo JHtml::_('grid.id', $i, $row->id); ?>
+                        <?php echo JHtml::_('grid.id', $i, $item->id); ?>
                     </td>
                     <td style="text-align: center">
-                        <?php echo JHtml::_('jgrid.published', $row->published, $i, 'helloworlds.', true, 'cb'); ?>
+                        <?php echo JHtml::_('jgrid.published', $item->published, $i, 'helloworlds.', true, 'cb'); ?>
                     </td>
                     <td>
                         <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_HELLOWORLD_EDIT_HELLOWORLD'); ?>">
-                        <?php echo $row->greeting; ?>
+                        <?php echo $item->greeting; ?>
                     </td>
                     <td>
-                        <?php echo $row->title; ?>
+                        <?php echo $item->title; ?>
                     </td>
                     <td>
-                        <?php echo $row->id; ?>
+                        <?php echo $item->id; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

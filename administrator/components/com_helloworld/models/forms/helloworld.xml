@@ -29,10 +29,33 @@
                 default=""
                 label="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_LABEL"
                 description="COM_HELLOWORLD_HELLOWORLD_FIELD_CATID_DESC"
-                required="true"
         >
             <option value="0">JOPTION_SELECT_CATEGORY</option>
         </field>
+        <field
+                name="menuitem"
+                type="menuitem"
+                label="COM_HELLOWORLD_HELLOWORLD_FIELD_MENU_ITEM_LABEL"
+                description="COM_HELLOWORLD_HELLOWORLD_FIELD_MENU_ITEM_LABEL_DESC"
+                default=""
+        >
+        </field>
+
+
+        <field
+                name="svgpath"
+                type="textarea"
+                label="COM_HELLOWORLD_HELLOWORLD_FIELD_SVG_PATH_LABEL"
+                description="COM_HELLOWORLD_HELLOWORLD_FIELD_SVG_PATH_LABEL_DESC"
+                filter="raw"
+
+        />
+        <field
+                name="blockmessage"
+                type="editor"
+                label="message"
+                filter="raw"
+        />
     </fieldset>
     <fields name="params">
         <fieldset

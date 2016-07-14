@@ -30,20 +30,14 @@ class HelloWorldViewHelloWorlds extends JViewLegacy
      */
     function display($tpl = null)
     {
-        // Get application
-        $app = JFactory::getApplication();
-        $context = "helloworld.list.admin.helloworld";
-
         // Get data from the model
         $this->items = $this->get('Items');
         $this->state = $this->get('State');
         $this->pagination = $this->get('Pagination');
-        $this->filter_order = $app->getUserStateFromRequest($context . 'filter_order', 'filter_order', 'greeting', 'cmd');
-        $this->filter_order_Dir = $app->getUserStateFromRequest($context . 'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
         $this->filterForm = $this->get('FilterForm');
         $this->activeFilters = $this->get('ActiveFilters');
 
-        
+
         // Check for errors.
         if (count($errors = $this->get('Errors'))) {
             JError::raiseError(500, implode('<br />', $errors));
@@ -62,6 +56,7 @@ class HelloWorldViewHelloWorlds extends JViewLegacy
         parent::display($tpl);
         // Set the document
         $this->setDocument();
+
     }
 
     /**
@@ -76,20 +71,32 @@ class HelloWorldViewHelloWorlds extends JViewLegacy
         $canDo = HelloWorldHelper::getActions();
         $title = JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLDS');
 
-        if ($this->pagination->total)
-        {
+        if ($this->pagination->total) {
             $title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
         }
 
         JToolBarHelper::title($title, 'helloworld');
         JToolBarHelper::addNew('helloworld.add', 'JTOOLBAR_NEW');
 
-        if ($canDo->get('core.edit')) {
-            JToolBarHelper::editList('helloworld.edit', 'JTOOLBAR_EDIT');
+        if ($canDo->get('core.edit'))
+        {
+            JToolbarHelper::editList('helloworld.edit');
         }
 
-        if ($canDo->get('core.delete')) {
-            JToolBarHelper::deleteList('', 'helloworlds.delete', 'JTOOLBAR_DELETE');
+        if ($canDo->get('core.edit.state')) {
+            JToolbarHelper::publish('helloworlds.publish', 'JTOOLBAR_PUBLISH', true);
+            JToolbarHelper::unpublish('helloworlds.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+            JToolbarHelper::archiveList('helloworlds.archive');
+            JToolbarHelper::checkin('helloworlds.checkin');
+        }
+
+        $state = $this->get('State');
+        if ($state->get('filter.state') == -2 && $canDo->get('core.delete'))
+        {
+            JToolbarHelper::deleteList('', 'helloworlds.delete', 'JTOOLBAR_EMPTY_TRASH');
+        } elseif ($canDo->get('core.edit.state'))
+        {
+            JToolbarHelper::trash('helloworlds.trash');
         }
 
         JToolBarHelper::divider();

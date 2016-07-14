@@ -14,6 +14,8 @@ defined('_JEXEC') or die;
  */
 class HelloWorldViewHelloCategory extends JViewLegacy
 {
+    protected $items;
+    
     /**
      * Display the Hello World view
      *
@@ -24,7 +26,7 @@ class HelloWorldViewHelloCategory extends JViewLegacy
      */
     function display($tpl = null){
         //Assign data to the view
-        $this->item = $this->get('Item');
+        $this->items = $this->get('Items');
 
         // Check for errors.
         if (count($errors = $this->get('Errors')))

@@ -39,11 +39,13 @@
 
     <!-- Front-end files -->
     <files folder="site">
+        <folder>controllers</folder>
+        <folder>language</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+        <filename>controller.php</filename>
         <filename>helloworld.php</filename>
         <filename>index.html</filename>
-        <filename>controller.php</filename>
-        <folder>views</folder>
-        <folder>models</folder>
     </files>
     <languages folder="site/language">
         <language tag="en-GB">en-GB/en-GB.com_helloworld.ini</language>

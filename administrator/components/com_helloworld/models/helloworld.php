@@ -103,4 +103,24 @@ class HelloWorldModelHelloWorld extends JModelAdmin
             return JFactory::getUser()->authorise( "core.delete", "com_helloworld.message." . $record->id );
         }
     }
+
+
+    protected function prepareTable($table)
+    {
+        $regex = '/d="\s*([^\/\>]+)"/';
+        preg_match_all($regex, $table->svgpath, $out);
+        $temp = '';
+        foreach ($out[1] as $key => $path):
+            echo "$path";
+            $temp .= 'd="' . $path . '"';
+        endforeach;
+
+        $table->svgpath = $temp;
+    }
+
+
+    public function save($data){
+        return parent::save($data);
+    }
 }
+

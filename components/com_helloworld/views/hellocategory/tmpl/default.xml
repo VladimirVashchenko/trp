@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Adds the component to component selection list for menu item assignment-->
 <metadata>
-    <layout title="Categories">
-        <message>Categories</message>
+    <layout title="COM_HELLOWORLD_HELLOCATEGORY_VIEW_DEFAULT_TITLE" option="com_helloworld_hellocategory_view_default_option">
+        <message>
+            <![CDATA[com_helloworld_hellocategory_view_default_desc]]>
+        </message>
     </layout>
     <fields name="request"
             addfieldpath="/administrator/components/com_helloworld/models/fields">

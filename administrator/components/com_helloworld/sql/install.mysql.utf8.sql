@@ -10,6 +10,9 @@ CREATE TABLE `#__helloworld` (
 	`svgpath` TEXT NOT NULL,
 	`blockmessage` TEXT NOT NULL,
 	`params`   VARCHAR(1024) NOT NULL DEFAULT '',
+	`state` tinyint(1) NOT NULL default '0',
+	`publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+	`publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
 	PRIMARY KEY (`id`)
 )
 	ENGINE =MyISAM

@@ -40,8 +40,6 @@ abstract class HelloWorldHelper
 
         // Set some global property
         $document = JFactory::getDocument();
-        $document->addStyleDeclaration('.icon-48-helloworld ' .
-            '{background-image: url(../media/com_helloworld/images/tux-48x48.png);}');
         if ($submenu == 'categories')
         {
             $document->setTitle(JText::_('COM_HELLOWORLD_ADMINISTRATION_CATEGORIES'));
@@ -53,21 +51,23 @@ abstract class HelloWorldHelper
      */
     public static function getActions($messageId = 0)
     {
-        $result	= new JObject;
-
-        if (empty($messageId)) {
+        $user = JFactory::getUser();
+        $result = new JObject;
+        if (empty($categoryId))
+        {
             $assetName = 'com_helloworld';
+            $level = 'component';
         }
-        else {
-            $assetName = 'com_helloworld.message.'.(int) $messageId;
+        else
+        {
+            $assetName = 'com_helloworld.category.'.(int) $categoryId;
+            $level = 'category';
         }
-
-        $actions = JAccess::getActions('com_helloworld', 'component');
-
-        foreach ($actions as $action) {
-            $result->set($action->name, JFactory::getUser()->authorise($action->name, $assetName));
+        $actions = JAccess::getActions('com_helloworld', $level);
+        foreach ($actions as $action)
+        {
+            $result->set($action->name, $user->authorise($action->name, $assetName));
         }
-
         return $result;
     }
 }

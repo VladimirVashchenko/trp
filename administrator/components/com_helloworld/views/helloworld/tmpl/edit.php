@@ -8,6 +8,11 @@
 
 defined ('_JEXEC') or die;
 JHtml::_('behavior.formvalidation');
+
+
+
+//$input = JFactory::getApplication()->input;
+//print_r($input);
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_helloworld&layout=edit&id=' . (int) $this->item->id); ?>"
       method="post" name="adminForm" id="adminForm" class="form-validate">

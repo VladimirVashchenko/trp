@@ -54,7 +54,7 @@ class HelloWorldModelHelloWorlds extends JModelList
         $search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
         $this->setState('filter.search', $search);
 
-        parent::populateState('h.greeting', 'asc');
+//        parent::populateState('h.greeting', 'asc');
     }
 
 
@@ -113,7 +113,7 @@ class HelloWorldModelHelloWorlds extends JModelList
             }
         }
 
-        $orderCol = $this->state->get('list.ordering', 'greeting');
+        $orderCol = $this->state->get('list.ordering', 'id');
         $orderDirn = $this->state->get('list.direction', 'asc');
         $query->order($db->escape($orderCol) . ' ' . $db->escape($orderDirn));
         return $query;

@@ -29,15 +29,21 @@ class HelloWorldModelHelloCategory extends JModelList
         if (empty($config['filter_fields']))
         {
             $config['filter_fields'] = array(
-                'id', 'a.id',
-                'title', 'a.title',
-                'state', 'a.state',
-                'company', 'a.company',
-                'image', 'a.image',
-                'url', 'a.url',
-                'phone', 'a.phone',
-                'description', 'a.description',
-                'ordering', 'a.ordering'
+                'id',               'h.id',
+                'greeting',         'h.greeting',
+                'catid',            'h.catid',
+                'svgpath',          'h.svgpath',
+                'viewportwidth',    'h.viewportwidth',
+                'viewportheight',   'h.viewportheight',
+                'viewboxwidth',     'h.viewboxwidth',
+                'viewboxheight',    'h.viewboxheight',
+                'blockmessage',     'h.blockmessage',
+                'menuitem_id',      'h.menuitem_id',
+                'state',            'h.state',
+                'publish_up',       'h.publish_up',
+                'publish_down',     'h.publish_down',
+                'title',            'c.title',
+                'link',             'm.link'
             );
         }
         parent::__construct($config);
@@ -45,18 +51,34 @@ class HelloWorldModelHelloCategory extends JModelList
 
     protected function getListQuery()
     {
-        $id    = $this->getState('message.id');
+        $id = JFactory::getApplication()->input->getCmd('id');
+
         $db = $this->getDbo();
-        $query = $db->getQuery(true)
-                ->select('greeting, params')
-                ->from('#__helloworld')
-                ->where('#__helloworld.catid=' . (int)$id);
+        $query = $db->getQuery(true);
 
-        $query->select($this->getState());
+        $query->select(
+            $this->getState(
+                'list.select',
+                'h.greeting, '.
+                'h.catid, '.
+                'h.svgpath, '.
+                'h.viewportwidth, '.
+                'h.viewportheight, '.
+                'h.viewboxwidth, '.
+                'h.viewboxheight, '.
+                'h.blockmessage, '.
+                'h.menuitem_id, '.
+                'h.state, '.
+                'm.link'
+            )
+        );
 
+        $query->from($db->quoteName('#__helloworld').' AS h');
 
+        $query->join('LEFT', $db->quoteName('#__menu'). ' AS m ON h.menuitem_id = m.id');
 
-
+        $query->where('(h.state IN (0, 1))');
+        $query->where('h.catid=' . (int)$id);
 
         return $query;
     }
@@ -68,7 +90,7 @@ class HelloWorldModelHelloCategory extends JModelList
      * Get the message
      * @return object The message to be displayed to the user
      */
-    public function getItem()
+    /*public function getItem()
     {
         if (!isset($this->item))
         {
@@ -105,5 +127,5 @@ class HelloWorldModelHelloCategory extends JModelList
         }
 
         return $this->item;
-    }
+    }*/
 }

@@ -5,3 +5,7 @@
  * Date: 14.07.2016
  * Time: 17:54
  */
+
+class HelloworldControllerHellocategory extends JControllerForm
+{
+}

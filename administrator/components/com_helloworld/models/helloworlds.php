@@ -23,18 +23,21 @@ class HelloWorldModelHelloWorlds extends JModelList
     {
         if (empty($config['filter_fields'])) {
             $config['filter_fields'] = array(
-                'id', 'h.id',
-                'greeting', 'h.greeting',
-                'published', 'h.published',
-                'catid', 'h.catid',
-                'title', 'c.title',
-                'svgpath', 'h.svgpath',
-                'blockmessage', 'h.blockmessage',
-                'menuitem_id', 'h.menuitem_id',
-                'state', 'h.state',
-                'publish_up', 'h.publish_up',
-                'publish_down', 'h.publish_down',
-                'link', 'm.link'
+                'id',               'h.id',
+                'greeting',         'h.greeting',
+                'catid',            'h.catid',
+                'svgpath',          'h.svgpath',
+                'viewportwidth',    'h.viewportwidth',
+                'viewportheight',   'h.viewportheight',
+                'viewboxwidth',     'h.viewboxwidth',
+                'viewboxheight',    'h.viewboxheight',
+                'blockmessage',     'h.blockmessage',
+                'menuitem_id',      'h.menuitem_id',
+                'state',            'h.state',
+                'publish_up',       'h.publish_up',
+                'publish_down',     'h.publish_down',
+                'title',            'c.title',
+                'link',             'm.link'
             );
         }
 
@@ -67,7 +70,22 @@ class HelloWorldModelHelloWorlds extends JModelList
 
         $query->select(
             $this->getState(
-                'list.select', 'h.id, h.greeting, h.published, h.catid, c.title, h.svgpath, h.blockmessage, h.menuitem_id, state, h.state, h.publish_up, h.publish_down, m.link'
+                'list.select',
+                'h.id, '.
+                'h.greeting, '.
+                'h.state, '.
+                'h.catid, '.
+                'h.svgpath, '.
+                'h.viewportwidth, '.
+                'h.viewportheight, '.
+                'h.viewboxwidth, '.
+                'h.viewboxheight, '.
+                'h.blockmessage, '.
+                'h.menuitem_id, '.
+                'h.publish_up, '.
+                'h.publish_down, '.
+                'c.title, '.
+                'm.link'
             )
         );
         $query->from($db->quoteName('#__helloworld') . ' AS h');

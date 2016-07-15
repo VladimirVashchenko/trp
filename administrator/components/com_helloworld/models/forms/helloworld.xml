@@ -50,6 +50,51 @@
                 filter="raw"
 
         />
+
+        <field
+                name="viewportwidth"
+                type="number"
+                default="0"
+                label="COM_HELLOWORLD_HELLOWORLD_FIELD_SVG_PATH_VP_WIDTH"
+                description="COM_HELLOWORLD_HELLOWORLD_FIELD_SVG_PATH_VP_WIDTH_DESC"
+                min="0"
+                max="300"
+                step="0.1"
+        />
+        <field
+                name="viewportheight"
+                type="number"
+                default="0"
+                label="COM_HELLOWORLD_HELLOWORLD_FIELD_SVG_PATH_VP_HEIGHT"
+                description="COM_HELLOWORLD_HELLOWORLD_FIELD_SVG_PATH_VP_HEIGHT_DESC"
+                min="0"
+                max="300"
+                step="0.1"
+        />
+
+        <field
+                name="viewboxwidth"
+                type="number"
+                default="0"
+                label="COM_HELLOWORLD_HELLOWORLD_FIELD_SVG_PATH_VB_WIDTH"
+                description="COM_HELLOWORLD_HELLOWORLD_FIELD_SVG_PATH_VB_WIDTH_DESC"
+                min="0"
+                max="300"
+                step="0.1"
+        />
+        <field
+                name="viewboxheight"
+                type="number"
+                default="0"
+                label="COM_HELLOWORLD_HELLOWORLD_FIELD_SVG_PATH_VB_HEIGHT"
+                description="COM_HELLOWORLD_HELLOWORLD_FIELD_SVG_PATH_VB_WIDTH_DESC"
+                min="0"
+                max="300"
+                step="0.1"
+        />
+
+
+
         <field
                 name="blockmessage"
                 type="editor"

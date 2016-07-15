@@ -111,8 +111,7 @@ class HelloWorldModelHelloWorld extends JModelAdmin
         preg_match_all($regex, $table->svgpath, $out);
         $temp = '';
         foreach ($out[1] as $key => $path):
-            echo "$path";
-            $temp .= 'd="' . $path . '"';
+            $temp .= '<path d="' . $path . '"/>';
         endforeach;
 
         $table->svgpath = $temp;

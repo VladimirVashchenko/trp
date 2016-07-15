@@ -34,7 +34,6 @@ $css = <<<ENDCSS
     background-color: #bababa;
 }
 .service p {
-    font-size: 16px;
     padding:  0 10px 10px 10px;
 }
 .service svg {

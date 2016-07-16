@@ -7,7 +7,8 @@
  *
  * вывод содержимого элемента helloworld на сайт
  */
-defined('_JEXEC') or die; ?>
+defined('_JEXEC') or die;
+?>
 
 <div class="services">
     <ul>
@@ -18,7 +19,9 @@ defined('_JEXEC') or die; ?>
 
             <li class="service">
                 <a href="<?php echo $item->link?>">
-                    <h1><?php echo $item->greeting; ?></h1>
+                    <div class="block_title_container">
+                        <h1 class="block_title" style="font-size: <?php echo $item->heading_size?>pt"><?php echo $item->greeting; ?></h1>
+                    </div>
                     <hr>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="<?php echo $item->viewportwidth ?>"

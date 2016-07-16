@@ -31,6 +31,7 @@ class HelloWorldModelHelloCategory extends JModelList
             $config['filter_fields'] = array(
                 'id',               'h.id',
                 'greeting',         'h.greeting',
+                'heading_size',     'h.heading_size',
                 'catid',            'h.catid',
                 'svgpath',          'h.svgpath',
                 'viewportwidth',    'h.viewportwidth',
@@ -60,6 +61,7 @@ class HelloWorldModelHelloCategory extends JModelList
             $this->getState(
                 'list.select',
                 'h.greeting, '.
+                'h.heading_size, '.
                 'h.catid, '.
                 'h.svgpath, '.
                 'h.viewportwidth, '.
@@ -82,50 +84,4 @@ class HelloWorldModelHelloCategory extends JModelList
 
         return $query;
     }
-
-
-
-
-    /**
-     * Get the message
-     * @return object The message to be displayed to the user
-     */
-    /*public function getItem()
-    {
-        if (!isset($this->item))
-        {
-            $id    = $this->getState('message.id');
-            $db    = JFactory::getDbo();
-//            $query = $db->getQuery(true)
-//                ->select('greeting, params')
-//                ->from('#__helloworld')
-//                ->where('#__helloworld.catid=' . (int)$id);
-//            $db->setQuery((string)$query);
-
-            $query = $db->getQuery(true)
-                ->select('COUNT(greeting)')
-                ->from('#__helloworld')
-                ->where('#__helloworld.catid=' . (int)$id);
-            $db->setQuery((string)$query);
-
-            print_r($db->loadResult());
-
-            if ($this->item = $db->loadObject())
-            {
-                // Load the JSON string
-                $params = new JRegistry;
-//                $params->loadString($this->item->params, 'JSON');
-                print_r($this->item);
-                $this->item->params = $params;
-
-                // Merge global params with item params
-//                $params = clone $this->getState('params');
-                $params->merge($this->item->params);
-                $this->item->params = $params;
-            }
-
-        }
-
-        return $this->item;
-    }*/
 }

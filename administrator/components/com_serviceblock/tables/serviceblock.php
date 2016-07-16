@@ -104,7 +104,7 @@ class ServiceBlockTableServiceBlock extends JTable
      */
     protected function _getAssetTitle()
     {
-        return $this->greeting;
+        return $this->title;
     }
 
     /**

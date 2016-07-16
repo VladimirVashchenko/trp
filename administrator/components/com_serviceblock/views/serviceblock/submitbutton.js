@@ -34,7 +34,7 @@ Joomla.submitbutton = function(task)
         }
         else
         {
-            alert(Joomla.JText._('COM_SERVICEBLOCK_SERVICEBLOCK_ERROR_UNACCEPTABLE',
+            alert(Joomla.JText._('COM_SERVICEBLOCK_ERROR_UNACCEPTABLE',
                 'Some values are unacceptable'));
             return false;
         }

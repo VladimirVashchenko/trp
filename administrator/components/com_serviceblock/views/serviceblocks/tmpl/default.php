@@ -28,7 +28,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
             <?php endif; ?>
             <div class="row-fluid">
                 <div class="span6">
-                    <?php echo JText::_('COM_SERVICEBLOCK_SERVICEBLOCKS_FILTER'); ?>
+                    <?php echo JText::_('COM_SERVICEBLOCKS_FILTER'); ?>
                     <?php
                     echo JLayoutHelper::render(
                         'joomla.searchtools.default',
@@ -48,10 +48,10 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                         <?php echo JHtml::_('grid.sort', 'JSTATUS', 'a.state', $listDirn, $listOrder); ?>
                     </th>
                     <th width="60%">
-                        <?php echo JHtml::_('grid.sort', 'COM_SERVICEBLOCK_SERVICEBLOCKS_NAME', 'greeting', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('grid.sort', 'COM_SERVICEBLOCKS_NAME', 'title', $listDirn, $listOrder); ?>
                     </th>
                     <th width="25%">
-                        <?php echo JHtml::_('grid.sort', 'COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_CATID_LABEL', 'title', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('grid.sort', 'COM_SERVICEBLOCK_FIELD_CATID_LABEL', 'title', $listDirn, $listOrder); ?>
                     </th>
                     <th width="1%">
                         <?php echo JHtml::_('grid.sort', 'COM_SERVICEBLOCK_ID', 'id', $listDirn, $listOrder); ?>
@@ -85,7 +85,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                             <td>
                                 <a href="<?php echo $link; ?>"
                                    title="<?php echo JText::_('COM_SERVICEBLOCK_EDIT_SERVICEBLOCK'); ?>">
-                                    <?php echo $item->greeting; ?>
+                                    <?php echo $item->title; ?>
                             </td>
                             <td>
                                 <?php echo $item->title; ?>

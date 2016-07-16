@@ -36,13 +36,12 @@ class JFormFieldServiceCategory extends JFormFieldList
     {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('#__categories.id, #__categories.title');
-        $query->from('#__categories');
+        $query->select('c.id, c.title');
+        $query->from($db->quoteName('#__categories'). ' AS c');
         // Retrieve only published items
-        $query->where('#__categories.extension = \'com_serviceblock\'');
+        $query->where('c.extension = \'com_serviceblock\'');
         $db->setQuery((string)$query);
         $categories = $db->loadObjectList();
-//        print_r($messages);
         $options = array();
 
         if ($categories) {

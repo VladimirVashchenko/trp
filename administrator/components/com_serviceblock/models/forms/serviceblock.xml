@@ -4,29 +4,29 @@
 >
     <fieldset
             name="details"
-            label="COM_SERVICEBLOCK_SERVICEBLOCK_DETAILS"
+            label="COM_SERVICEBLOCK_DETAILS"
     >
         <field
                 name="id"
                 type="hidden"
         />
         <field
-                name="greeting"
+                name="title"
                 type="text"
-                label="COM_SERVICEBLOCK_SERVICEBLOCK_GREETING_LABEL"
-                description="COM_SERVICEBLOCK_SERVICEBLOCK_GREETING_DESC"
+                label="COM_SERVICEBLOCK_TITLE_LABEL"
+                description="COM_SERVICEBLOCK_TITLE_DESC"
                 size="40"
-                class="inputbox validate-greeting"
-                validate="greeting"
+                class="inputbox validate-title"
+                validate="title"
                 required="true"
                 default=""
         />
         <field
-                name="heading_size"
+                name="title_size"
                 type="number"
                 default="22"
-                label="COM_SERVICEBLOCK_SERVICEBLOCK_HEADINGSIZE_LABEL"
-                description="COM_SERVICEBLOCK_SERVICEBLOCK_HEADINGSIZE_DESC"
+                label="COM_SERVICEBLOCK_TITLESIZE_LABEL"
+                description="COM_SERVICEBLOCK_TITLESIZE_DESC"
                 min="0"
                 max="99"
                 step="0.1"
@@ -37,16 +37,16 @@
                 extension="com_serviceblock"
                 class="inputbox"
                 default=""
-                label="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_CATID_LABEL"
-                description="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_CATID_DESC"
+                label="COM_SERVICEBLOCK_FIELD_CATID_LABEL"
+                description="COM_SERVICEBLOCK_FIELD_CATID_DESC"
         >
             <option value="0">JOPTION_SELECT_CATEGORY</option>
         </field>
         <field
                 name="menuitem_id"
                 type="menuitem"
-                label="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_MENU_ITEM_LABEL"
-                description="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_MENU_ITEM_LABEL_DESC"
+                label="COM_SERVICEBLOCK_FIELD_MENU_ITEM_LABEL"
+                description="COM_SERVICEBLOCK_FIELD_MENU_ITEM_LABEL_DESC"
                 default=""
         >
         </field>
@@ -55,8 +55,8 @@
         <field
                 name="svgpath"
                 type="textarea"
-                label="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SVG_PATH_LABEL"
-                description="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SVG_PATH_LABEL_DESC"
+                label="COM_SERVICEBLOCK_FIELD_SVG_PATH_LABEL"
+                description="COM_SERVICEBLOCK_FIELD_SVG_PATH_LABEL_DESC"
                 filter="raw"
 
         />
@@ -65,8 +65,8 @@
                 name="viewportwidth"
                 type="number"
                 default="0"
-                label="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SVG_PATH_VP_WIDTH"
-                description="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SVG_PATH_VP_WIDTH_DESC"
+                label="COM_SERVICEBLOCK_FIELD_SVG_PATH_VP_WIDTH"
+                description="COM_SERVICEBLOCK_FIELD_SVG_PATH_VP_WIDTH_DESC"
                 min="0"
                 max="300"
                 step="0.1"
@@ -75,8 +75,8 @@
                 name="viewportheight"
                 type="number"
                 default="0"
-                label="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SVG_PATH_VP_HEIGHT"
-                description="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SVG_PATH_VP_HEIGHT_DESC"
+                label="COM_SERVICEBLOCK_FIELD_SVG_PATH_VP_HEIGHT"
+                description="COM_SERVICEBLOCK_FIELD_SVG_PATH_VP_HEIGHT_DESC"
                 min="0"
                 max="300"
                 step="0.1"
@@ -86,8 +86,8 @@
                 name="viewboxwidth"
                 type="number"
                 default="0"
-                label="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SVG_PATH_VB_WIDTH"
-                description="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SVG_PATH_VB_WIDTH_DESC"
+                label="COM_SERVICEBLOCK_FIELD_SVG_PATH_VB_WIDTH"
+                description="COM_SERVICEBLOCK_FIELD_SVG_PATH_VB_WIDTH_DESC"
                 min="0"
                 max="300"
                 step="0.1"
@@ -96,8 +96,8 @@
                 name="viewboxheight"
                 type="number"
                 default="0"
-                label="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SVG_PATH_VB_HEIGHT"
-                description="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SVG_PATH_VB_WIDTH_DESC"
+                label="COM_SERVICEBLOCK_FIELD_SVG_PATH_VB_HEIGHT"
+                description="COM_SERVICEBLOCK_FIELD_SVG_PATH_VB_WIDTH_DESC"
                 min="0"
                 max="300"
                 step="0.1"
@@ -108,7 +108,8 @@
         <field
                 name="blockmessage"
                 type="editor"
-                label="message"
+                label="COM_SERVICEBLOCK_BLOCK_MESSAGE"
+                description="COM_SERVICEBLOCK_BLOCK_MESSAGE_DESC"
                 filter="raw"
         />
     </fieldset>
@@ -130,8 +131,8 @@
             <field
                     name="show_category"
                     type="list"
-                    label="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SHOW_CATEGORY_LABEL"
-                    description="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SHOW_CATEGORY_DESC"
+                    label="COM_SERVICEBLOCK_FIELD_SHOW_CATEGORY_LABEL"
+                    description="COM_SERVICEBLOCK_FIELD_SHOW_CATEGORY_DESC"
                     default=""
             >
                 <option value="">JGLOBAL_USE_GLOBAL</option>
@@ -142,7 +143,7 @@
     </fields>
     <fieldset
             name="accesscontrol"
-            label="COM_SERVICEBLOCK_FIELDSET_RULES"
+            label="COM_SERVICEBLOCK_RULES_FIELDSET"
     >
         <field
                 name="asset_id"
@@ -152,7 +153,7 @@
         <field
                 name="rules"
                 type="rules"
-                label="COM_SERVICEBLOCK_FIELD_RULES_LABEL"
+                label="COM_SERVICEBLOCK_RULES_FIELD_LABEL"
                 filter="rules"
                 validate="rules"
                 class="inputbox"

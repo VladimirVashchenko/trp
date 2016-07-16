@@ -24,7 +24,7 @@ class ServiceBlockModelServiceBlocks extends JModelList
         if (empty($config['filter_fields'])) {
             $config['filter_fields'] = array(
                 'id',               'h.id',
-                'greeting',         'h.greeting',
+                'title',         'h.title',
                 'catid',            'h.catid',
                 'svgpath',          'h.svgpath',
                 'viewportwidth',    'h.viewportwidth',
@@ -72,7 +72,7 @@ class ServiceBlockModelServiceBlocks extends JModelList
             $this->getState(
                 'list.select',
                 'h.id, '.
-                'h.greeting, '.
+                'h.title, '.
                 'h.state, '.
                 'h.catid, '.
                 'h.svgpath, '.
@@ -109,7 +109,7 @@ class ServiceBlockModelServiceBlocks extends JModelList
                 $query->where('h.id = '.(int) substr($search, 3));
             } else {
                 $search = $db->Quote('%'.$db->escape($search, true).'%');
-                $query->where('(h.greeting LIKE '.$search.')');
+                $query->where('(h.title LIKE '.$search.')');
             }
         }
 

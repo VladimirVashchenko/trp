@@ -28,7 +28,7 @@ $css = "
 .service h1 {
     line-height:1.4;
     font-family: Arial;
-    font-size: ". $this->item->heading_size ."pt;
+    font-size: ". $this->item->title_size ."pt;
     display: inline-block;
     font-weight: 100;
     margin: auto;
@@ -85,7 +85,7 @@ JFactory::getDocument()->addStyleDeclaration($css);
                 <ul style="list-style: none;">
                     <li class="service">
                         <div class="block_title_container">
-                            <h1 id="title"><?php echo $this->item->greeting; ?></h1>
+                            <h1 id="title"><?php echo $this->item->title; ?></h1>
                         </div>
                         <hr>
 
@@ -107,17 +107,17 @@ JFactory::getDocument()->addStyleDeclaration($css);
     </tbody>
 </table>
 <script>
-    var heading = document.getElementById("title");
+    var title = document.getElementById("title");
     var svg = document.getElementById("svg_preview");
     var box = svg.viewBox.baseVal;
 
-    var headinng_size = document.getElementById("jform_heading_size");
+    var headinng_size = document.getElementById("jform_title_size");
     var widthnumber = document.getElementById("jform_viewportwidth");
     var heigthnumber = document.getElementById("jform_viewportheight");
     var boxwidth = document.getElementById("jform_viewboxwidth");
     var boxheight = document.getElementById("jform_viewboxheight");
 
-    headinng_size.onchange = function(){heading.style.fontSize=this.value+"pt"};
+    headinng_size.onchange = function(){title.style.fontSize=this.value+"pt"};
     widthnumber.onchange = function(){svg.setAttribute('width', this.value)};
     heigthnumber.onchange = function(){svg.setAttribute('height', this.value)};
     boxwidth.onchange = function(){box.width=this.value};

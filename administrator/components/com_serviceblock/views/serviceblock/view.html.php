@@ -124,11 +124,11 @@ class ServiceBlockViewServiceBlock extends JViewLegacy
     {
         $isNew = ($this->item->id == 0);
         $document = JFactory::getDocument();
-        $document->setTitle($isNew ? JText::_('COM_SERVICEBLOCK_SERVICEBLOCK_CREATING')
-            : JText::_('COM_SERVICEBLOCK_SERVICEBLOCK_EDITING'));
+        $document->setTitle($isNew ? JText::_('COM_SERVICEBLOCK_CREATING')
+            : JText::_('COM_SERVICEBLOCK_EDITING'));
         $document->addScript(JURI::root() . $this->script);
         $document->addScript(JURI::root() . "/administrator/components/com_serviceblock"
             . "/views/serviceblock/submitbutton.js");
-        JText::script('COM_SERVICEBLOCK_SERVICEBLOCK_ERROR_UNACCEPTABLE');
+        JText::script('COM_SERVICEBLOCK_ERROR_UNACCEPTABLE');
     }
 }

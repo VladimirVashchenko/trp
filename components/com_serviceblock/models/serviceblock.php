@@ -74,10 +74,10 @@ class ServiceBlockModelServiceBlock extends JModelItem
             $id    = $this->getState('message.id');
             $db    = JFactory::getDbo();
             $query = $db->getQuery(true);
-            $query->select('h.greeting, h.params, c.title as category')
-                ->from('#__serviceblock as h')
-                ->leftJoin('#__categories as c ON h.catid=c.id')
-                ->where('h.id=' . (int)$id);
+            $query->select('s.title, s.params, c.title as category')
+                ->from($db->quoteName('#__serviceblock') . ' as s')
+                ->join('LEFT', $db->quoteName('#__categories') . ' as c ON s.catid=c.id')
+                ->where('s.id=' . (int)$id);
             $db->setQuery((string)$query);
 
             if ($this->item = $db->loadObject())

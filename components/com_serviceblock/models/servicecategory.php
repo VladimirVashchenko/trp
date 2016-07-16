@@ -29,20 +29,20 @@ class ServiceBlockModelServiceCategory extends JModelList
         if (empty($config['filter_fields']))
         {
             $config['filter_fields'] = array(
-                'id',               'h.id',
-                'greeting',         'h.greeting',
-                'heading_size',     'h.heading_size',
-                'catid',            'h.catid',
-                'svgpath',          'h.svgpath',
-                'viewportwidth',    'h.viewportwidth',
-                'viewportheight',   'h.viewportheight',
-                'viewboxwidth',     'h.viewboxwidth',
-                'viewboxheight',    'h.viewboxheight',
-                'blockmessage',     'h.blockmessage',
-                'menuitem_id',      'h.menuitem_id',
-                'state',            'h.state',
-                'publish_up',       'h.publish_up',
-                'publish_down',     'h.publish_down',
+                'id',               's.id',
+                'title',            's.title',
+                'title_size',       's.title_size',
+                'catid',            's.catid',
+                'svgpath',          's.svgpath',
+                'viewportwidth',    's.viewportwidth',
+                'viewportheight',   's.viewportheight',
+                'viewboxwidth',     's.viewboxwidth',
+                'viewboxheight',    's.viewboxheight',
+                'blockmessage',     's.blockmessage',
+                'menuitem_id',      's.menuitem_id',
+                'state',            's.state',
+                'publish_up',       's.publish_up',
+                'publish_down',     's.publish_down',
                 'title',            'c.title',
                 'link',             'm.link'
             );
@@ -60,27 +60,27 @@ class ServiceBlockModelServiceCategory extends JModelList
         $query->select(
             $this->getState(
                 'list.select',
-                'h.greeting, '.
-                'h.heading_size, '.
-                'h.catid, '.
-                'h.svgpath, '.
-                'h.viewportwidth, '.
-                'h.viewportheight, '.
-                'h.viewboxwidth, '.
-                'h.viewboxheight, '.
-                'h.blockmessage, '.
-                'h.menuitem_id, '.
-                'h.state, '.
+                's.title, '.
+                's.title_size, '.
+                's.catid, '.
+                's.svgpath, '.
+                's.viewportwidth, '.
+                's.viewportheight, '.
+                's.viewboxwidth, '.
+                's.viewboxheight, '.
+                's.blockmessage, '.
+                's.menuitem_id, '.
+                's.state, '.
                 'm.link'
             )
         );
 
-        $query->from($db->quoteName('#__serviceblock').' AS h');
+        $query->from($db->quoteName('#__serviceblock').' AS s');
 
-        $query->join('LEFT', $db->quoteName('#__menu'). ' AS m ON h.menuitem_id = m.id');
+        $query->join('LEFT', $db->quoteName('#__menu'). ' AS m ON s.menuitem_id = m.id');
 
-        $query->where('(h.state IN (0, 1))');
-        $query->where('h.catid=' . (int)$id);
+        $query->where('(s.state IN (0, 1))');
+        $query->where('s.catid=' . (int)$id);
 
         return $query;
     }

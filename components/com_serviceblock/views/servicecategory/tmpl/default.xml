@@ -12,8 +12,8 @@
             <field
                 name="id"
                 type="servicecategory"
-                label="category"
-                description="A list of categories"
+                label="COM_SERVICEBLOCK_MENU_CATEGORY"
+                description="COM_SERVICEBLOCK_MENU_CATEGORY_DESC"
             />
         </fieldset>
     </fields>

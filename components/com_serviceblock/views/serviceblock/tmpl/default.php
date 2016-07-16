@@ -8,6 +8,6 @@
  * вывод содержимого элемента serviceblock на сайт
  */
 defined('_JEXEC') or die; ?>
-<h1><?php echo $this->item->greeting.(($this->item->category and $this->item->params->get('show_category'))
+<h1><?php echo $this->item->title.(($this->item->category and $this->item->params->get('show_category'))
             ? (' ('.$this->item->category.')') : ''); ?>
 </h1>

@@ -31,7 +31,9 @@ defined('_JEXEC') or die;
                             <path class="path-<?php echo $key ?>" d="<?php echo "$path" ?>"/>
                         <?php endforeach; ?>
                     </svg>
-                    <?php echo $item->blockmessage ?>
+                    <div class="service-message-wrap">
+                        <?php echo $item->blockmessage ?>
+                    </div>
                 </a>
             </li>
 

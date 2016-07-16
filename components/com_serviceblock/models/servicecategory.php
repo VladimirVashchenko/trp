@@ -30,8 +30,8 @@ class ServiceBlockModelServiceCategory extends JModelList
         {
             $config['filter_fields'] = array(
                 'id',               's.id',
-                'title',            's.title',
-                'title_size',       's.title_size',
+                'blocktitle',       's.blocktitle',
+                'blocktitle_size',  's.blocktitle_size',
                 'catid',            's.catid',
                 'svgpath',          's.svgpath',
                 'viewportwidth',    's.viewportwidth',
@@ -60,7 +60,7 @@ class ServiceBlockModelServiceCategory extends JModelList
         $query->select(
             $this->getState(
                 'list.select',
-                's.title, '.
+                's.blocktitle, '.
                 's.title_size, '.
                 's.catid, '.
                 's.svgpath, '.

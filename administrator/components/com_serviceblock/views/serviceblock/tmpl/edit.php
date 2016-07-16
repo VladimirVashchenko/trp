@@ -85,7 +85,7 @@ JFactory::getDocument()->addStyleDeclaration($css);
                 <ul style="list-style: none;">
                     <li class="service">
                         <div class="block_title_container">
-                            <h1 id="title"><?php echo $this->item->blocktitle; ?></h1>
+                            <h1 id="blocktitle"><?php echo $this->item->blocktitle; ?></h1>
                         </div>
                         <hr>
 
@@ -108,17 +108,17 @@ JFactory::getDocument()->addStyleDeclaration($css);
     </tbody>
 </table>
 <script>
-    var title = document.getElementById("title");
+    var blocktitle = document.getElementById("blocktitle");
     var svg = document.getElementById("svg_preview");
     var box = svg.viewBox.baseVal;
 
-    var headinng_size = document.getElementById("jform_title_size");
+    var headinng_size = document.getElementById("jform_blocktitle_size");
     var widthnumber = document.getElementById("jform_viewportwidth");
     var heigthnumber = document.getElementById("jform_viewportheight");
     var boxwidth = document.getElementById("jform_viewboxwidth");
     var boxheight = document.getElementById("jform_viewboxheight");
 
-    headinng_size.onchange = function(){title.style.fontSize=this.value+"pt"};
+    headinng_size.onchange = function(){blocktitle.style.fontSize=this.value+"pt"};
     widthnumber.onchange = function(){svg.setAttribute('width', this.value)};
     heigthnumber.onchange = function(){svg.setAttribute('height', this.value)};
     boxwidth.onchange = function(){box.width=this.value};

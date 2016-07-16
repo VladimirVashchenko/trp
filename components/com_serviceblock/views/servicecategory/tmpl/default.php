@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
             <li class="service">
                 <a href="<?php echo $item->link?>">
                     <div class="block_title_container">
-                        <h1 class="block_title" style="font-size: <?php echo $item->title_size?>pt"><?php echo $item->title; ?></h1>
+                        <h1 class="block_title" style="font-size: <?php echo $item->blocktitle_size?>pt"><?php echo $item->blocktitle; ?></h1>
                     </div>
                     <hr>
 

@@ -61,7 +61,7 @@ class ServiceBlockModelServiceCategory extends JModelList
             $this->getState(
                 'list.select',
                 's.blocktitle, '.
-                's.title_size, '.
+                's.blocktitle_size, '.
                 's.catid, '.
                 's.svgpath, '.
                 's.viewportwidth, '.

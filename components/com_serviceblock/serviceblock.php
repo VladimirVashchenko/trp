@@ -7,8 +7,8 @@
  */
 defined('_JEXEC') or die;
 
-//Get an instance of the controller prefixed by Helloworld
-$controller = JControllerLegacy::getInstance('Helloworld');
+//Get an instance of the controller prefixed by Serviceblock
+$controller = JControllerLegacy::getInstance('Serviceblock');
 
 //perform the Request task
 $input = JFactory::getApplication()->input;

@@ -6,6 +6,6 @@
  * Time: 17:54
  */
 
-class HelloworldControllerHellocategory extends JControllerForm
+class ServiceblockControllerServicecategory extends JControllerForm
 {
 }

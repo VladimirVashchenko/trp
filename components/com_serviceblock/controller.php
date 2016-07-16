@@ -8,7 +8,7 @@
 defined('_JEXEC') or die;
 
 /**
- * Hello World component controller
+ * Service Block component controller
  */
 class ServiceBlockController extends JControllerLegacy
 {

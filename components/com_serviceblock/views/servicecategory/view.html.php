@@ -17,7 +17,7 @@ class ServiceBlockViewServiceCategory extends JViewLegacy
     protected $items;
     
     /**
-     * Display the Hello World view
+     * Display the Service Block view
      *
      * @param string $tpl The name of the template file to parse;
      * automatically searches through the template paths.

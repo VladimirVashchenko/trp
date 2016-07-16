@@ -10,17 +10,17 @@
 defined('_JEXEC') or die;
 ?>
 
-<div class="services">
+<div class="block-group">
     <ul>
     <?php foreach ($this->items as $item) :
         $regex = '/d="\s*([^\/\>]+)"/';
         preg_match_all($regex, $item->svgpath, $out);
         ?>
 
-            <li class="service">
+            <li class="block">
                 <a href="<?php echo $item->link?>">
-                    <div class="block_title_container">
-                        <h1 class="block_title" style="font-size: <?php echo $item->blocktitle_size?>pt"><?php echo $item->blocktitle; ?></h1>
+                    <div class="block-title-container" style="min-height: <?php echo $item->blocktitle_height ?>px">
+                        <h1 class="block-title" style="font-size: <?php echo $item->blocktitle_size?>pt"><?php echo $item->blocktitle; ?></h1>
                     </div>
                     <hr>
 
@@ -31,7 +31,7 @@ defined('_JEXEC') or die;
                             <path class="path-<?php echo $key ?>" d="<?php echo "$path" ?>"/>
                         <?php endforeach; ?>
                     </svg>
-                    <div class="service-message-wrap">
+                    <div class="block-message-wrap">
                         <?php echo $item->blockmessage ?>
                     </div>
                 </a>

@@ -29,22 +29,23 @@ class ServiceBlockModelServiceCategory extends JModelList
         if (empty($config['filter_fields']))
         {
             $config['filter_fields'] = array(
-                'id',               's.id',
-                'blocktitle',       's.blocktitle',
-                'blocktitle_size',  's.blocktitle_size',
-                'catid',            's.catid',
-                'svgpath',          's.svgpath',
-                'viewportwidth',    's.viewportwidth',
-                'viewportheight',   's.viewportheight',
-                'viewboxwidth',     's.viewboxwidth',
-                'viewboxheight',    's.viewboxheight',
-                'blockmessage',     's.blockmessage',
-                'menuitem_id',      's.menuitem_id',
-                'state',            's.state',
-                'publish_up',       's.publish_up',
-                'publish_down',     's.publish_down',
-                'title',            'c.title',
-                'link',             'm.link'
+                'id',                's.id',
+                'blocktitle',        's.blocktitle',
+                'blocktitle_size',   's.blocktitle_size',
+                'blocktitle_height', 's.blocktitle_height',
+                'catid',             's.catid',
+                'svgpath',           's.svgpath',
+                'viewportwidth',     's.viewportwidth',
+                'viewportheight',    's.viewportheight',
+                'viewboxwidth',      's.viewboxwidth',
+                'viewboxheight',     's.viewboxheight',
+                'blockmessage',      's.blockmessage',
+                'menuitem_id',       's.menuitem_id',
+                'state',             's.state',
+                'publish_up',        's.publish_up',
+                'publish_down',      's.publish_down',
+                'title',             'c.title',
+                'link',              'm.link'
             );
         }
         parent::__construct($config);
@@ -62,6 +63,7 @@ class ServiceBlockModelServiceCategory extends JModelList
                 'list.select',
                 's.blocktitle, '.
                 's.blocktitle_size, '.
+                's.blocktitle_height, '.
                 's.catid, '.
                 's.svgpath, '.
                 's.viewportwidth, '.

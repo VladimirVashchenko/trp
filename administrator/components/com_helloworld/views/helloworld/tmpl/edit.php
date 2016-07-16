@@ -9,22 +9,30 @@
 defined('_JEXEC') or die;
 JHtml::_('behavior.formvalidation');
 
-$css = <<<ENDCSS
-
+$css = "
 .services {
-    margin-top: 20%;
+    margin-top: 10%;
 }
 .service{
     width: 220px;
     text-align: center;
-    line-height:1.4;
+    line-height:1;
     background-color: #f5f5f5;
 }
+.block_title_container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
 .service h1 {
+    line-height:1.4;
     font-family: Arial;
-    font-size: 32px;
+    font-size: ". $this->item->heading_size ."pt;
     display: inline-block;
     font-weight: 100;
+    margin: auto;
+    vertical-align: middle;
 }
 .service hr {
     width: 193px;
@@ -39,7 +47,7 @@ $css = <<<ENDCSS
 .service svg {
     margin: 5px 0 5px 0;
 }
-ENDCSS;
+";
 JFactory::getDocument()->addStyleDeclaration($css);
 ?>
 
@@ -47,7 +55,7 @@ JFactory::getDocument()->addStyleDeclaration($css);
 <table>
     <tbody>
     <tr>
-        <td width="70%">
+        <td width="50%">
             <form
                 action="<?php echo JRoute::_('index.php?option=com_helloworld&layout=edit&id=' . (int)$this->item->id); ?>"
                 method="post" name="adminForm" id="adminForm" class="form-validate">
@@ -56,7 +64,7 @@ JFactory::getDocument()->addStyleDeclaration($css);
                         <fieldset class="adminform">
                             <legend><?php echo JText::_($fieldset->label); ?></legend>
                             <div class="row-fluid">
-                                <div class="span6">
+                                <div>
                                     <?php foreach ($this->form->getFieldset($name) as $field): ?>
                                         <div class="control-group">
                                             <div class="control-label"><?php echo $field->label; ?></div>
@@ -76,7 +84,9 @@ JFactory::getDocument()->addStyleDeclaration($css);
             <div class="services">
                 <ul style="list-style: none;">
                     <li class="service">
-                        <h1><?php echo $this->item->greeting; ?></h1>
+                        <div class="block_title_container">
+                            <h1 id="title"><?php echo $this->item->greeting; ?></h1>
+                        </div>
                         <hr>
 
                         <svg id="svg_preview" xmlns="http://www.w3.org/2000/svg"
@@ -97,14 +107,17 @@ JFactory::getDocument()->addStyleDeclaration($css);
     </tbody>
 </table>
 <script>
+    var heading = document.getElementById("title");
     var svg = document.getElementById("svg_preview");
     var box = svg.viewBox.baseVal;
 
+    var headinng_size = document.getElementById("jform_heading_size");
     var widthnumber = document.getElementById("jform_viewportwidth");
     var heigthnumber = document.getElementById("jform_viewportheight");
     var boxwidth = document.getElementById("jform_viewboxwidth");
     var boxheight = document.getElementById("jform_viewboxheight");
 
+    headinng_size.onchange = function(){heading.style.fontSize=this.value+"pt"};
     widthnumber.onchange = function(){svg.setAttribute('width', this.value)};
     heigthnumber.onchange = function(){svg.setAttribute('height', this.value)};
     boxwidth.onchange = function(){box.width=this.value};

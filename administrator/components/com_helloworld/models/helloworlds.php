@@ -54,7 +54,7 @@ class HelloWorldModelHelloWorlds extends JModelList
         $search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
         $this->setState('filter.search', $search);
 
-        parent::populateState('h.greeting', 'asc');
+        parent::populateState('h.id', 'asc');
     }
 
 

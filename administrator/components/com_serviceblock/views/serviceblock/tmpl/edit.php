@@ -8,50 +8,7 @@
 
 defined('_JEXEC') or die;
 JHtml::_('behavior.formvalidation');
-
-$css = "
-.services {
-    margin-top: 10%;
-}
-.service{
-    width: 220px;
-    text-align: center;
-    line-height:1;
-    background-color: #f5f5f5;
-}
-.block_title_container {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 80px;
-}
-.service h1 {
-    line-height:1.4;
-    font-family: Arial;
-    font-size: ". $this->item->blocktitle_size ."pt;
-    display: inline-block;
-    font-weight: 100;
-    margin: auto;
-    vertical-align: middle;
-}
-.service hr {
-    width: 193px;
-    margin: 0 12px 0 12px;
-    height: 2px;
-    border: 0;
-    background-color: #bababa;
-}
-.service-message-wrap {
-    padding: 10px 5px 10px 5px;
-}
-.service svg {
-    margin: 5px 0 5px 0;
-}
-";
-JFactory::getDocument()->addStyleDeclaration($css);
 ?>
-
-
 <table>
     <tbody>
     <tr>
@@ -81,11 +38,11 @@ JFactory::getDocument()->addStyleDeclaration($css);
             </form>
         </td>
         <td style="vertical-align: top">
-            <div class="services">
+            <div class="block-group">
                 <ul style="list-style: none;">
-                    <li class="service">
-                        <div class="block_title_container">
-                            <h1 id="blocktitle"><?php echo $this->item->blocktitle; ?></h1>
+                    <li class="block">
+                        <div class="block-title-container">
+                            <h1 id="block-title"><?php echo $this->item->blocktitle; ?></h1>
                         </div>
                         <hr>
 
@@ -98,7 +55,7 @@ JFactory::getDocument()->addStyleDeclaration($css);
                             echo $this->item->svgpath;
                             ?>
                         </svg>
-                        <div class="service-message-wrap">
+                        <div class="block-message-wrap">
                             <?php echo $this->item->blockmessage ?>
                         </div>
                     </li>
@@ -107,18 +64,67 @@ JFactory::getDocument()->addStyleDeclaration($css);
     </tr>
     </tbody>
 </table>
+<?php
+$css = "
+.block-group {
+    margin-top: 10%;
+}
+.block{
+    width: 220px;
+    text-align: center;
+    line-height:1;
+    background-color: #f5f5f5;
+}
+.block-title-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+    min-height: ". $this->item->blocktitle_height ."px;
+}
+#block-title {
+    line-height:1;
+    font-family: Arial;
+    font-size: ". $this->item->blocktitle_size ."pt;
+    display: inline-block;
+    font-weight: 100;
+    margin: auto;
+    vertical-align: middle;
+}
+.block hr {
+    width: 193px;
+    margin: 0 12px 0 12px;
+    height: 2px;
+    border: 0;
+    background-color: #bababa;
+}
+.block-message-wrap {
+    padding: 10px 5px 10px 5px;
+}
+.block-message-wrap p {
+    margin: 0;
+}
+
+.block svg {
+    margin: 5px 0 5px 0;
+}
+";
+JFactory::getDocument()->addStyleDeclaration($css);?>
 <script>
-    var blocktitle = document.getElementById("blocktitle");
+    var blocktitle = document.getElementById("block-title");
+    var titlecontainer = document.getElementsByClassName("block-title-container")[0];
     var svg = document.getElementById("svg_preview");
     var box = svg.viewBox.baseVal;
 
     var headinng_size = document.getElementById("jform_blocktitle_size");
+    var headinng_height = document.getElementById("jform_blocktitle_height");
     var widthnumber = document.getElementById("jform_viewportwidth");
     var heigthnumber = document.getElementById("jform_viewportheight");
     var boxwidth = document.getElementById("jform_viewboxwidth");
     var boxheight = document.getElementById("jform_viewboxheight");
 
     headinng_size.onchange = function(){blocktitle.style.fontSize=this.value+"pt"};
+    headinng_height.onchange = function(){titlecontainer.style.minHeight=this.value+"px"};
     widthnumber.onchange = function(){svg.setAttribute('width', this.value)};
     heigthnumber.onchange = function(){svg.setAttribute('height', this.value)};
     boxwidth.onchange = function(){box.width=this.value};

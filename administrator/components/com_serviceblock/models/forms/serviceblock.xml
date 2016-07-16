@@ -11,7 +11,7 @@
                 type="hidden"
         />
         <field
-                name="title"
+                name="blocktitle"
                 type="text"
                 label="COM_SERVICEBLOCK_TITLE_LABEL"
                 description="COM_SERVICEBLOCK_TITLE_DESC"
@@ -22,7 +22,7 @@
                 default=""
         />
         <field
-                name="title_size"
+                name="blocktitle_size"
                 type="number"
                 default="22"
                 label="COM_SERVICEBLOCK_TITLESIZE_LABEL"

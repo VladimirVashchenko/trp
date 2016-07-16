@@ -23,19 +23,19 @@ class ServiceBlockModelServiceBlocks extends JModelList
     {
         if (empty($config['filter_fields'])) {
             $config['filter_fields'] = array(
-                'id',               'h.id',
-                'title',         'h.title',
-                'catid',            'h.catid',
-                'svgpath',          'h.svgpath',
-                'viewportwidth',    'h.viewportwidth',
-                'viewportheight',   'h.viewportheight',
-                'viewboxwidth',     'h.viewboxwidth',
-                'viewboxheight',    'h.viewboxheight',
-                'blockmessage',     'h.blockmessage',
-                'menuitem_id',      'h.menuitem_id',
-                'state',            'h.state',
-                'publish_up',       'h.publish_up',
-                'publish_down',     'h.publish_down',
+                'id',               's.id',
+                'blocktitle',       's.blocktitle',
+                'catid',            's.catid',
+                'svgpath',          's.svgpath',
+                'viewportwidth',    's.viewportwidth',
+                'viewportheight',   's.viewportheight',
+                'viewboxwidth',     's.viewboxwidth',
+                'viewboxheight',    's.viewboxheight',
+                'blockmessage',     's.blockmessage',
+                'menuitem_id',      's.menuitem_id',
+                'state',            's.state',
+                'publish_up',       's.publish_up',
+                'publish_down',     's.publish_down',
                 'title',            'c.title',
                 'link',             'm.link'
             );
@@ -54,7 +54,7 @@ class ServiceBlockModelServiceBlocks extends JModelList
         $search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
         $this->setState('filter.search', $search);
 
-        parent::populateState('h.id', 'asc');
+        parent::populateState('s.id', 'asc');
     }
 
 
@@ -71,34 +71,34 @@ class ServiceBlockModelServiceBlocks extends JModelList
         $query->select(
             $this->getState(
                 'list.select',
-                'h.id, '.
-                'h.title, '.
-                'h.state, '.
-                'h.catid, '.
-                'h.svgpath, '.
-                'h.viewportwidth, '.
-                'h.viewportheight, '.
-                'h.viewboxwidth, '.
-                'h.viewboxheight, '.
-                'h.blockmessage, '.
-                'h.menuitem_id, '.
-                'h.publish_up, '.
-                'h.publish_down, '.
+                's.id, '.
+                's.blocktitle, '.
+                's.state, '.
+                's.catid, '.
+                's.svgpath, '.
+                's.viewportwidth, '.
+                's.viewportheight, '.
+                's.viewboxwidth, '.
+                's.viewboxheight, '.
+                's.blockmessage, '.
+                's.menuitem_id, '.
+                's.publish_up, '.
+                's.publish_down, '.
                 'c.title, '.
                 'm.link'
             )
         );
-        $query->from($db->quoteName('#__serviceblock') . ' AS h');
-        $query->join('LEFT', $db->quoteName('#__categories') . ' AS c ON h.catid = c.id');
-        $query->join('LEFT', $db->quoteName('#__menu'). ' AS m ON h.menuitem_id = m.id');
+        $query->from($db->quoteName('#__serviceblock') . ' AS s');
+        $query->join('LEFT', $db->quoteName('#__categories') . ' AS c ON s.catid = c.id');
+        $query->join('LEFT', $db->quoteName('#__menu'). ' AS m ON s.menuitem_id = m.id');
 
         $published = $this->getState('filter.state');
         if (is_numeric($published))
         {
-            $query->where('h.state = '.(int) $published);
+            $query->where('s.state = '.(int) $published);
         } elseif ($published === '')
         {
-            $query->where('(h.state IN (0, 1))');
+            $query->where('(s.state IN (0, 1))');
         }
 
         $search = $this->getState('filter.search');
@@ -106,10 +106,10 @@ class ServiceBlockModelServiceBlocks extends JModelList
         {
             if (stripos($search, 'id:') === 0)
             {
-                $query->where('h.id = '.(int) substr($search, 3));
+                $query->where('s.id = '.(int) substr($search, 3));
             } else {
                 $search = $db->Quote('%'.$db->escape($search, true).'%');
-                $query->where('(h.title LIKE '.$search.')');
+                $query->where('(s.blocktitle LIKE '.$search.')');
             }
         }
 

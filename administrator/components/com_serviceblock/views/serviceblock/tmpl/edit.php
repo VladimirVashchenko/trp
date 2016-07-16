@@ -28,7 +28,7 @@ $css = "
 .service h1 {
     line-height:1.4;
     font-family: Arial;
-    font-size: ". $this->item->title_size ."pt;
+    font-size: ". $this->item->blocktitle_size ."pt;
     display: inline-block;
     font-weight: 100;
     margin: auto;
@@ -41,8 +41,8 @@ $css = "
     border: 0;
     background-color: #bababa;
 }
-.service p {
-    padding:  0 10px 10px 10px;
+.service-message-wrap {
+    padding: 10px 5px 10px 5px;
 }
 .service svg {
     margin: 5px 0 5px 0;
@@ -85,7 +85,7 @@ JFactory::getDocument()->addStyleDeclaration($css);
                 <ul style="list-style: none;">
                     <li class="service">
                         <div class="block_title_container">
-                            <h1 id="title"><?php echo $this->item->title; ?></h1>
+                            <h1 id="title"><?php echo $this->item->blocktitle; ?></h1>
                         </div>
                         <hr>
 
@@ -98,8 +98,9 @@ JFactory::getDocument()->addStyleDeclaration($css);
                             echo $this->item->svgpath;
                             ?>
                         </svg>
-
-                        <?php echo $this->item->blockmessage ?>
+                        <div class="service-message-wrap">
+                            <?php echo $this->item->blockmessage ?>
+                        </div>
                     </li>
                 </ul>
         </td>

@@ -8,12 +8,14 @@
 defined('_JEXEC') or die;
 
 /**
- * HTML View class for the HelloWorld Component
+ * HTML View class for the ServiceBlock Component
  * вывод на сайт
- * вызывает models/helloworld.php.HelloWorldModelHelloWorld
+ * вызывает models/servicecategory.php.ServiceBlockModelServiceCategory
  */
-class HelloWorldViewHelloWorld extends JViewLegacy
+class ServiceBlockViewServiceCategory extends JViewLegacy
 {
+    protected $items;
+    
     /**
      * Display the Hello World view
      *
@@ -24,7 +26,7 @@ class HelloWorldViewHelloWorld extends JViewLegacy
      */
     function display($tpl = null){
         //Assign data to the view
-        $this->item = $this->get('Item');
+        $this->items = $this->get('Items');
 
         // Check for errors.
         if (count($errors = $this->get('Errors')))

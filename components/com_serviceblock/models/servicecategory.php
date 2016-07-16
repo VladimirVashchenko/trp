@@ -6,17 +6,17 @@
  * Time: 23:13
  *
  * When a menu item of this component is created/updated, Joomla stores the identifier of the message.
- * The HelloWorldModelHelloWorld model has now to compute the message according to this identifier and the data stored
+ * The ServiceBlockModelServiceBlock model has now to compute the message according to this identifier and the data stored
  * in the database.
  */
 defined('_JEXEC') or die;
 
 /**
- * HelloWorld Model
+ * ServiceBlock Model
  *
  * @since  0.0.1
  */
-class HelloWorldModelHelloCategory extends JModelList
+class ServiceBlockModelServiceCategory extends JModelList
 {
     /**
      * @var object item
@@ -75,7 +75,7 @@ class HelloWorldModelHelloCategory extends JModelList
             )
         );
 
-        $query->from($db->quoteName('#__helloworld').' AS h');
+        $query->from($db->quoteName('#__serviceblock').' AS h');
 
         $query->join('LEFT', $db->quoteName('#__menu'). ' AS m ON h.menuitem_id = m.id');
 

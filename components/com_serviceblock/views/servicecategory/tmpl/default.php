@@ -5,7 +5,7 @@
  * Date: 04.07.2016
  * Time: 18:40
  *
- * вывод содержимого элемента helloworld на сайт
+ * вывод содержимого элемента serviceblock на сайт
  */
 defined('_JEXEC') or die;
 ?>

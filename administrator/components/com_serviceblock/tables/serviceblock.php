@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 
 /**
  * The model now asks the TableServiceBlock to get the message.
- * Hello Table class
+ * Service Table class
  *
  * @since  0.0.1
  */

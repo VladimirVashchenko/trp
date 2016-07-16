@@ -22,7 +22,7 @@ class ServiceBlockViewServiceBlocks extends JViewLegacy
 
 
     /**
-     * Display the Hello World view
+     * Display the Service Blocks view
      *
      * @param   string $tpl The name of the template file to parse; automatically searches through the template paths.
      *

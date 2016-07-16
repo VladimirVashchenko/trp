@@ -160,42 +160,4 @@
                 section="message"
         />
     </fieldset>
-    <fields name="params">
-        <fieldset
-                name="params"
-                label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS"
-        >
-            <field
-                    name="show_category"
-                    type="list"
-                    label="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SHOW_CATEGORY_LABEL"
-                    description="COM_SERVICEBLOCK_SERVICEBLOCK_FIELD_SHOW_CATEGORY_DESC"
-                    default=""
-            >
-                <option value="">JGLOBAL_USE_GLOBAL</option>
-                <option value="0">JHIDE</option>
-                <option value="1">JSHOW</option>
-            </field>
-        </fieldset>
-    </fields>
-    <fieldset
-            name="accesscontrol"
-            label="COM_SERVICEBLOCK_FIELDSET_RULES"
-    >
-        <field
-                name="asset_id"
-                type="hidden"
-                filter="unset"
-        />
-        <field
-                name="rules"
-                type="rules"
-                label="COM_SERVICEBLOCK_FIELD_RULES_LABEL"
-                filter="rules"
-                validate="rules"
-                class="inputbox"
-                component="com_serviceblock"
-                section="message"
-        />
-    </fieldset>
 </form>

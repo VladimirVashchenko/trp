@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="component" version="3.5" method="upgrade">
+
+    <name>COM_SERVICEBLOCK</name>
+    <creationDate>04.07.2016</creationDate>
+    <author>Administrator</author>
+    <authorEmail></authorEmail>
+    <authorUrl></authorUrl>
+    <copyright></copyright>
+    <license></license>
+    <version>1.1</version>
+    <description>DESCRIPTION</description>
+
+    <!-- Runs on install -->
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <!-- Runs on uninstall -->
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <!-- Runs on update -->
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+
+    <!-- Media files -->
+    <!--<media folder="media" destination="com_com_serviceblock">-->
+        <!--<folder>css</folder>-->
+        <!--<folder>images</folder>-->
+        <!--<folder>js</folder>-->
+    <!--</media>-->
+
+    <!-- Front-end files -->
+    <files folder="site">
+        <folder>controllers</folder>
+        <folder>language</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+        <filename>controller.php</filename>
+        <filename>serviceblock.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <languages folder="site/language">
+        <language tag="en-GB">en-GB/en-GB.com_serviceblock.ini</language>
+    </languages>
+
+    <!--<media destination="com_serviceblock" folder="media">-->
+        <!--<filename>index.html</filename>-->
+        <!--<folder>images</folder>-->
+    <!--</media>-->
+
+    <!-- Back-end files -->
+    <administration>
+        <!-- Menu entries -->
+        <menu link='index.php?option=com_serviceblock'>COM_SERVICEBLOCK_MENU</menu>
+        <!-- Administration Menu Section -->
+
+        <!-- Core files -->
+        <files folder="admin">
+            <!-- Admin Main File Copy Section -->
+            <filename>index.html</filename>
+            <filename>config.xml</filename>
+            <filename>serviceblock.php</filename>
+            <filename>controller.php</filename>
+            <filename>access.xml</filename>
+            <!-- SQL files section -->
+            <folder>sql</folder>
+            <!-- tables files section -->
+            <folder>tables</folder>
+            <!-- models files section -->
+            <folder>models</folder>
+            <!-- views files section -->
+            <folder>views</folder>
+            <!-- controllers files section -->
+            <folder>controllers</folder>
+            <!-- helpers files section -->
+            <folder>helpers</folder>
+        </files>
+        <languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_serviceblock.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_serviceblock.sys.ini</language>
+        </languages>
+    </administration>
+</extension>

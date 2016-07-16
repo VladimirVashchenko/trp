@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+        addrulepath="/administrator/components/com_serviceblock/models/rules"
+>
+    <fieldset
+            name="details"
+            label="COM_SERVICEBLOCK_DETAILS"
+    >
+        <field
+                name="id"
+                type="hidden"
+        />
+        <field
+                name="blocktitle"
+                type="text"
+                label="COM_SERVICEBLOCK_TITLE_LABEL"
+                description="COM_SERVICEBLOCK_TITLE_DESC"
+                size="40"
+                class="inputbox validate-title"
+                validate="title"
+                required="true"
+                default=""
+        />
+        <field
+                name="blocktitle_size"
+                type="number"
+                default="22"
+                label="COM_SERVICEBLOCK_TITLESIZE_LABEL"
+                description="COM_SERVICEBLOCK_TITLESIZE_DESC"
+                min="0"
+                max="99"
+                step="0.1"
+        />
+        <field
+                name="blocktitle_height"
+                type="number"
+                default="50"
+                label="COM_SERVICEBLOCK_TITLEHEIGHT_LABEL"
+                description="COM_SERVICEBLOCK_TITLEHEIGHT_DESC"
+                min="0"
+                max="99"
+                step="1"
+        />
+        <field
+                name="catid"
+                type="category"
+                extension="com_serviceblock"
+                class="inputbox"
+                default=""
+                label="COM_SERVICEBLOCK_FIELD_CATID_LABEL"
+                description="COM_SERVICEBLOCK_FIELD_CATID_DESC"
+        >
+            <option value="0">JOPTION_SELECT_CATEGORY</option>
+        </field>
+        <field
+                name="menuitem_id"
+                type="menuitem"
+                label="COM_SERVICEBLOCK_FIELD_MENU_ITEM_LABEL"
+                description="COM_SERVICEBLOCK_FIELD_MENU_ITEM_LABEL_DESC"
+                default=""
+        >
+        </field>
+
+
+        <field
+                name="svgpath"
+                type="textarea"
+                label="COM_SERVICEBLOCK_FIELD_SVG_PATH_LABEL"
+                description="COM_SERVICEBLOCK_FIELD_SVG_PATH_LABEL_DESC"
+                filter="raw"
+
+        />
+
+        <field
+                name="viewportwidth"
+                type="number"
+                default="0"
+                label="COM_SERVICEBLOCK_FIELD_SVG_PATH_VP_WIDTH"
+                description="COM_SERVICEBLOCK_FIELD_SVG_PATH_VP_WIDTH_DESC"
+                min="0"
+                max="300"
+                step="0.1"
+        />
+        <field
+                name="viewportheight"
+                type="number"
+                default="0"
+                label="COM_SERVICEBLOCK_FIELD_SVG_PATH_VP_HEIGHT"
+                description="COM_SERVICEBLOCK_FIELD_SVG_PATH_VP_HEIGHT_DESC"
+                min="0"
+                max="300"
+                step="0.1"
+        />
+
+        <field
+                name="viewboxwidth"
+                type="number"
+                default="0"
+                label="COM_SERVICEBLOCK_FIELD_SVG_PATH_VB_WIDTH"
+                description="COM_SERVICEBLOCK_FIELD_SVG_PATH_VB_WIDTH_DESC"
+                min="0"
+                max="300"
+                step="0.1"
+        />
+        <field
+                name="viewboxheight"
+                type="number"
+                default="0"
+                label="COM_SERVICEBLOCK_FIELD_SVG_PATH_VB_HEIGHT"
+                description="COM_SERVICEBLOCK_FIELD_SVG_PATH_VB_WIDTH_DESC"
+                min="0"
+                max="300"
+                step="0.1"
+        />
+
+
+
+        <field
+                name="blockmessage"
+                type="editor"
+                label="COM_SERVICEBLOCK_BLOCK_MESSAGE"
+                description="COM_SERVICEBLOCK_BLOCK_MESSAGE_DESC"
+                filter="raw"
+        />
+    </fieldset>
+    <fieldset name="status">
+        <field name="state" type="list"
+               label="JSTATUS" description="JFIELD_PUBLISHED_DESC"
+               class="inputbox small" size="1" default="1" >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="2">JARCHIVED</option>
+            <option value="-2">JTRASHED</option>
+        </field>
+    </fieldset>
+    <fields name="params">
+        <fieldset
+                name="params"
+                label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS"
+        >
+            <field
+                    name="show_category"
+                    type="list"
+                    label="COM_SERVICEBLOCK_FIELD_SHOW_CATEGORY_LABEL"
+                    description="COM_SERVICEBLOCK_FIELD_SHOW_CATEGORY_DESC"
+                    default=""
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+        </fieldset>
+    </fields>
+    <fieldset
+            name="accesscontrol"
+            label="COM_SERVICEBLOCK_RULES_FIELDSET"
+    >
+        <field
+                name="asset_id"
+                type="hidden"
+                filter="unset"
+        />
+        <field
+                name="rules"
+                type="rules"
+                label="COM_SERVICEBLOCK_RULES_FIELD_LABEL"
+                filter="rules"
+                validate="rules"
+                class="inputbox"
+                component="com_serviceblock"
+                section="message"
+        />
+    </fieldset>
+</form>

@@ -79,7 +79,7 @@ $css = "
     display:flex;
     align-items: center;
     justify-content: center;
-    padding: 5px 0;
+    padding: 5px 5px;
     min-height: ". $this->item->blocktitle_height ."px;
 }
 #block-title {

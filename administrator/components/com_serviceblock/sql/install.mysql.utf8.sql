@@ -20,6 +20,6 @@ CREATE TABLE `#__serviceblock` (
 	`publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
 	PRIMARY KEY (`id`)
 )
-	ENGINE =MyISAM
+	ENGINE =InnoDB
 	AUTO_INCREMENT =0
 	DEFAULT CHARSET =utf8;

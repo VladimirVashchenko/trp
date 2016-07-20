@@ -10,7 +10,6 @@
 defined('_JEXEC') or die('Restricted area');
 
 $doc = JFactory::getDocument();
-$doc->addStyleSheet('/modules/mod_svg_link/css/svg_link_style.css');
 
 require_once __DIR__ . '/helper.php';
 

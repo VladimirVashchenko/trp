@@ -12,7 +12,7 @@ JHtml::_('behavior.formvalidation');
 <table>
     <tbody>
     <tr>
-        <td width="50%">
+        <td width="40%">
             <form
                 action="<?php echo JRoute::_('index.php?option=com_svglink&layout=edit&id=' . (int)$this->item->id); ?>"
                 method="post" name="adminForm" id="adminForm" class="form-validate">
@@ -37,7 +37,7 @@ JHtml::_('behavior.formvalidation');
                 <?php echo JHtml::_('form.token'); ?>
             </form>
         </td>
-        <td style="vertical-align: top">
+        <td style="vertical-align: top; padding-top: 10%">
             <footer id="footer">
                  <div id="footer-link">
                       <a href="">
@@ -55,10 +55,6 @@ JHtml::_('behavior.formvalidation');
                           </div>
                         </a>
                     </div>
-
-
-
-
             </footer>
         </td>
     </tr>
@@ -71,41 +67,33 @@ $css = "
             overflow: hidden;
             height: 80px;
             width:1000px;
-            background-color: var(--theme-color);
-            position: absolute;
-            bottom: 0;
+            background-color: #eee;
         }
-            .footer-link-wrap {
+            #footer-link a {
+                vertical-align: middle;
+                text-decoration: none;
+                color: var(--font-color-with-background);
+            }
+                #footer p {
+                    color: var(--font-color-with-background);
+                }
+                #footer-link svg {
+                    margin:5px 0;
+                }
+            #footer-link {
                 margin:auto;
                 text-align: center;
-                width: 19.6%;
+                display: inline-block;
+                background-color: var(--theme-color);
+                -webkit-transition: 0.02s linear;
+                -moz-transition: 0.02s linear;
+                -o-transition: 0.02s linear;
+                transition: 0.02s linear;
+                vertical-align: middle;
             }
-                .footer p {
-                    color: var(--font-color-with-background);
-                }
-                .footer-link a {
-                    vertical-align: middle;
-                    text-decoration: none;
-                    color: var(--font-color-with-background);
-                }
-                    .footer-link svg {
-                        /*height: 25px;*/
-                        margin:5px 0;
-                    }
-                .footer-link {
-                    margin:auto;
-                    text-align: center;
-                    display: inline-block;
-                    background-color: var(--theme-color);
-                    -webkit-transition: transform var(--transitions-transform);
-                    -moz-transition: transform var(--transitions-transform);
-                    -o-transition: transform var(--transitions-transform);
-                    transition: transform var(--transitions-transform);
-                    vertical-align: middle;
-                }
-                .footer-link:hover {
-                    transform: scale(1.05);
-                }
+            #footer-link:hover {
+                transform: scale(1.05);
+            }
 ";
 JFactory::getDocument()->addStyleDeclaration($css); ?>
 <script>

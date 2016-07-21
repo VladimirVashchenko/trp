@@ -52,9 +52,6 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                     <th width="60%">
                         <?php echo JHtml::_('grid.sort', 'COM_SVGLINKS_NAME', 'blocktitle', $listDirn, $listOrder); ?>
                     </th>
-<!--                    <th width="25%">-->
-<!--                        --><?php //echo JHtml::_('grid.sort', 'COM_SVGLINK_FIELD_CATID_LABEL', 'title', $listDirn, $listOrder); ?>
-<!--                    </th>-->
                     <th width="1%">
                         <?php echo JHtml::_('grid.sort', 'COM_SVGLINK_ID', 'id', $listDirn, $listOrder); ?>
                     </th>
@@ -89,9 +86,6 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                                    title="<?php echo JText::_('COM_SVGLINK_EDIT_SVGLINK'); ?>">
                                     <?php echo $item->linktitle; ?>
                             </td>
-<!--                            <td>-->
-<!--                                --><?php //echo $item->title; ?>
-<!--                            </td>-->
                             <td>
                                 <?php echo $item->id; ?>
                             </td>

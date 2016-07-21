@@ -51,6 +51,14 @@
         />
 
         <field
+                name="svgcolor"
+                type="color"
+                alpha="true"
+                default="#000"
+                label="Color[]"
+                description="Svg color[]"/>
+
+        <field
                 name="viewportwidth"
                 type="number"
                 default="0"

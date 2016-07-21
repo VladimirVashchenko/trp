@@ -7,6 +7,7 @@ CREATE TABLE `#__svglink` (
 	`linktitle` VARCHAR(100) NOT NULL,
 	`linktitle_size` tinyint(2) NOT NULL,
 	`svgpath` TEXT NOT NULL,
+	`svgcolor` VARCHAR(30) NOT NULL DEFAULT '#000',
 	`viewportwidth` INT(10) NOT NULL DEFAULT '0',
 	`viewportheight` INT(10) NOT NULL DEFAULT '0',
 	`viewboxwidth` INT(10) NOT NULL DEFAULT '0',

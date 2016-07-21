@@ -70,12 +70,15 @@ class SvgLinkModelSvgLinks extends JModelList
                 'list.select',
                 's.id, '.
                 's.linktitle, '.
+                's.linktitle_size, '.
                 's.state, '.
                 's.svgpath, '.
+                's.svgcolor, '.
                 's.viewportwidth, '.
                 's.viewportheight, '.
                 's.viewboxwidth, '.
                 's.viewboxheight, '.
+                's.show_title, '.
                 's.menuitem_id, '.
                 's.publish_up, '.
                 's.publish_down, '.

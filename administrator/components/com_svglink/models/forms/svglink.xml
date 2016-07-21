@@ -16,7 +16,6 @@
                 label="COM_SVGLINK_TITLE_LABEL"
                 description="COM_SVGLINK_TITLE_DESC"
                 size="40"
-                class="inputbox validate-title"
                 required="true"
                 default=""
         />
@@ -123,36 +122,6 @@
             <option value="-2">JTRASHED</option>
         </field>
     </fieldset>
-    <!--<fields name="params">-->
-        <!--<fieldset-->
-                <!--name="params"-->
-                <!--label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS"-->
-        <!--&gt;-->
-            <!--&lt;!&ndash;<field&ndash;&gt;-->
-                    <!--&lt;!&ndash;name="show_category"&ndash;&gt;-->
-                    <!--&lt;!&ndash;type="list"&ndash;&gt;-->
-                    <!--&lt;!&ndash;label="COM_SVGLINK_FIELD_SHOW_CATEGORY_LABEL"&ndash;&gt;-->
-                    <!--&lt;!&ndash;description="COM_SVGLINK_FIELD_SHOW_CATEGORY_DESC"&ndash;&gt;-->
-                    <!--&lt;!&ndash;default=""&ndash;&gt;-->
-            <!--&lt;!&ndash;&gt;&ndash;&gt;-->
-                <!--&lt;!&ndash;<option value="">JGLOBAL_USE_GLOBAL</option>&ndash;&gt;-->
-                <!--&lt;!&ndash;<option value="0">JHIDE</option>&ndash;&gt;-->
-                <!--&lt;!&ndash;<option value="1">JSHOW</option>&ndash;&gt;-->
-            <!--&lt;!&ndash;</field>&ndash;&gt;-->
-            <!--<field-->
-                    <!--name="show_title"-->
-                    <!--type="radio"-->
-                    <!--class="btn-group btn-group-yesno"-->
-                    <!--default="1"-->
-                    <!--label="COM_SVGLINK_FIELD_SHOWTITLE_LABEL"-->
-                    <!--description="COM_SVGLINK_FIELD_SHOWTITLE_DESC"-->
-                    <!--filter="integer"-->
-            <!--&gt;-->
-                <!--<option value="1">JYES</option>-->
-                <!--<option value="0">JNO</option>-->
-            <!--</field>-->
-        <!--</fieldset>-->
-    <!--</fields>-->
     <fieldset
             name="accesscontrol"
             label="COM_SVGLINK_RULES_FIELDSET"

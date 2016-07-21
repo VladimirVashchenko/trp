@@ -1,1 +1,1 @@
-ALTER TABLE `#__svglink` ADD `params` VARCHAR(1024) NOT NULL DEFAULT '';
+-- ALTER TABLE `#__svglink` ADD `params` VARCHAR(1024) NOT NULL DEFAULT '';

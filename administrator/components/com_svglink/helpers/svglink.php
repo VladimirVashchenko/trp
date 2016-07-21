@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 /**
  * SvgLink component helper.
  *
- * @param   string  $submenu  The name of the active view.
+ * @param   string $submenu The name of the active view.
  *
  * @return  void
  *
@@ -32,18 +32,6 @@ abstract class SvgLinkHelper
             $submenu == 'svglinks'
         );
 
-//        JHtmlSidebar::addEntry(
-//            JText::_('COM_SVGLINK_SUBMENU_CATEGORIES'),
-//            'index.php?option=com_categories&view=categories&extension=com_svglink',
-//            $submenu == 'categories'
-//        );
-
-        // Set some global property
-//        $document = JFactory::getDocument();
-//        if ($submenu == 'categories')
-//        {
-//            $document->setTitle(JText::_('COM_SVGLINK_ADMINISTRATION_CATEGORIES'));
-//        }
     }
 
     /**
@@ -53,19 +41,10 @@ abstract class SvgLinkHelper
     {
         $user = JFactory::getUser();
         $result = new JObject;
-        if (empty($categoryId))
-        {
-            $assetName = 'com_svglink';
-            $level = 'component';
-        }
-        else
-        {
-            $assetName = 'com_svglink.category.'.(int) $categoryId;
-            $level = 'category';
-        }
+        $assetName = 'com_svglink';
+        $level = 'component';
         $actions = JAccess::getActions('com_svglink', $level);
-        foreach ($actions as $action)
-        {
+        foreach ($actions as $action) {
             $result->set($action->name, $user->authorise($action->name, $assetName));
         }
         return $result;

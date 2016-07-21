@@ -7,10 +7,6 @@
  */
 defined('_JEXEC') or die;
 
-// Set some global property
-//$document = JFactory::getDocument();
-//$document->addStyleDeclaration('.icon-svglink {background-image: url(../media/com_svglink/images/Tux-16x16.png);}');
-
 // Access check: is this user allowed to access the backend of this component?
 if (!JFactory::getUser()->authorise('core.manage', 'com_svglink'))
 {

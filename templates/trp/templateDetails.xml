@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="3.0" type="template" client="site">
+    <name>trp</name>
+    <description>TPL_TRP_XML_DESCRIPTION</description>
+    <version>1.0</version>
+    <creationDate>June 2016</creationDate>
+    <author>author</author>
+    <authorEmail>user@site.com</authorEmail>
+    <authorUrl>http://www.example.com</authorUrl>
+    <license>TPL_TRP_LICENSE</license>
+    <copyright>TPL_TRP_COPYRIGHT</copyright>
+
+    <files>
+        <folder>css</folder>
+        <folder>html</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+        <folder>language</folder>
+
+        <filename>favicon.ico</filename>
+        <filename>index.html</filename>
+        <filename>index.php</filename>
+        <filename>templateDetails.xml</filename>
+        <filename>template_preview.png</filename>
+        <filename>template_thumbnail.png</filename>
+    </files>
+
+    <positions>
+        <position>header</position>
+        <position>search</position>
+        <position>menu</position>
+        <position>social</position>
+
+        <position>promo</position>
+        <position>services</position>
+        <position>news</position>
+        <position>footer</position>
+    </positions>
+
+    <config>
+        <fields name="params">
+            <fieldset name="advanced">
+                <field
+                        name="site_name"
+                        type="text"
+                        label="Site name"
+                        description="Obvious"/>
+
+                <field
+                        name="site_description"
+                        type="textarea"
+                        label="Site description"
+                        description="What information your site has"/>
+
+                <field
+                        name="main_background"
+                        type="color"
+                        alpha="true"
+                        default="#ffffff"
+                        label="Background"
+                        description="Site background"/>
+
+                <field
+                        name="theme"
+                        type="color"
+                        alpha="true"
+                        default="#f5f5f5"
+                        label="Theme"
+                        description="Site theme"/>
+
+                <field
+                        name="header_background"
+                        type="color"
+                        alpha="true"
+                        default="#ffffff"
+                        label="Header background"
+                        description="Header background"/>
+
+                <field
+                        name="lines"
+                        type="color"
+                        alpha="true"
+                        default="#bababa"
+                        label="Separators"
+                        description="Horizontal lines"/>
+
+                <field
+                        name="font_color"
+                        type="color"
+                        alpha="true"
+                        default="#000000"
+                        label="Font color"
+                        description="Font color for fonts with no background"/>
+
+                <field
+                        name="font_color_with_background"
+                        type="color"
+                        alpha="true"
+                        default="#000000"
+                        label="Font color with background"
+                        description="Font color for fonts with background"/>
+
+                <field
+                        name="accent"
+                        type="color"
+                        alpha="true"
+                        default="#FF0066"
+                        label="Accent color"
+                        description="Font color for active menu"/>
+
+                <field
+                        name="highlight"
+                        type="color"
+                        alpha="true"
+                        default="rgba(132, 188, 255, 0.4)"
+                        label="Highlight on mose-over"
+                        description="Background color for menu"/>
+            </fieldset>
+        </fields>
+    </config>
+
+    <languages folder="language">
+        <language tag="ru-RU">ru-RU/ru-RU.tpl_trp.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.tpl_trp.sys.ini</language>
+
+        <language tag="en-GB">en-GB/en-GB.tpl_trp.ini</language>
+        <language tag="en-GB">en-GB/en-GB.tpl_trp.sys.ini</language>
+    </languages>
+</extension>

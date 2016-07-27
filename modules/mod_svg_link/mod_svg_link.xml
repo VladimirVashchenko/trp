@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.5" client="site" method="upgrade">
-    <name>mod_mod_svg_link</name>
+    <name>MOD_SVG_LINK</name>
     <creationDate>28.06.2016</creationDate>
     <author>Vladimir Vashchenko</author>
     <version>1.0</version>

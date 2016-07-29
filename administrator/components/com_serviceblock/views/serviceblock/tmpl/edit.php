@@ -42,24 +42,22 @@ JHtml::_('behavior.formvalidation');
                 <ul style="list-style: none;">
                     <li class="block">
                         <div class="block-title-container">
-                            <h1 id="block-title"><?php echo $this->item->blocktitle; ?></h1>
+                            <div id="block-title"><?php echo $this->item->blocktitle; ?></div>
                         </div>
                         <hr>
 
                         <svg id="svg_preview" xmlns="http://www.w3.org/2000/svg"
-                             width="<?php echo $this->item->viewportwidth?>"
+                             width="<?php echo $this->item->viewportwidth ?>"
                              height="<?php echo $this->item->viewportheight ?>"
-                             viewBox="0 0 <?php echo $this->item->viewboxwidth?> <?php echo $this->item->viewboxheight ?>"
-                        style="border: 1px dashed">
+                             viewBox="0 0 <?php echo $this->item->viewboxwidth ?> <?php echo $this->item->viewboxheight ?>"
+                             style="border: 1px dashed">
                             <?php
                             echo $this->item->svgpath;
                             ?>
                         </svg>
-                        <div class="block-message-wrap">
-                            <?php echo $this->item->blockmessage ?>
-                        </div>
                     </li>
                 </ul>
+            </div>
         </td>
     </tr>
     </tbody>
@@ -76,20 +74,20 @@ $css = "
     background-color: #f5f5f5;
 }
 .block-title-container {
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content: center;
     padding: 5px 5px;
-    min-height: ". $this->item->blocktitle_height ."px;
+    min-height: " . $this->item->blocktitle_height . "px;
 }
 #block-title {
     line-height:1;
     font-family: Arial;
-    font-size: ". $this->item->blocktitle_size ."pt;
+    font-size: " . $this->item->blocktitle_size . "pt;
     display: inline-block;
     font-weight: 100;
     margin: auto;
-    vertical-align: middle;
+    text-align: center;
+    flex: 1 100%;
 }
 .block hr {
     width: 193px;
@@ -106,10 +104,10 @@ $css = "
 }
 
 .block svg {
-    margin: 5px 0 5px 0;
+    margin: 18px 0;
 }
 ";
-JFactory::getDocument()->addStyleDeclaration($css);?>
+JFactory::getDocument()->addStyleDeclaration($css); ?>
 <script>
     var blocktitle = document.getElementById("block-title");
     var titlecontainer = document.getElementsByClassName("block-title-container")[0];
@@ -123,10 +121,22 @@ JFactory::getDocument()->addStyleDeclaration($css);?>
     var boxwidth = document.getElementById("jform_viewboxwidth");
     var boxheight = document.getElementById("jform_viewboxheight");
 
-    headinng_size.onchange = function(){blocktitle.style.fontSize=this.value+"pt"};
-    headinng_height.onchange = function(){titlecontainer.style.minHeight=this.value+"px"};
-    widthnumber.onchange = function(){svg.setAttribute('width', this.value)};
-    heigthnumber.onchange = function(){svg.setAttribute('height', this.value)};
-    boxwidth.onchange = function(){box.width=this.value};
-    boxheight.onchange = function(){box.height=this.value};
+    headinng_size.onchange = function () {
+        blocktitle.style.fontSize = this.value + "pt"
+    };
+    headinng_height.onchange = function () {
+        titlecontainer.style.minHeight = this.value + "px"
+    };
+    widthnumber.onchange = function () {
+        svg.setAttribute('width', this.value)
+    };
+    heigthnumber.onchange = function () {
+        svg.setAttribute('height', this.value)
+    };
+    boxwidth.onchange = function () {
+        box.width = this.value
+    };
+    boxheight.onchange = function () {
+        box.height = this.value
+    };
 </script>

@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
             <li class="block">
                 <a href="<?php echo $item->link?>">
                     <div class="block-title-container" style="min-height: <?php echo $item->blocktitle_height ?>px">
-                        <h1 class="block-title" style="font-size: <?php echo $item->blocktitle_size?>pt"><?php echo $item->blocktitle; ?></h1>
+                        <div class="block-title" style="font-size: <?php echo $item->blocktitle_size?>pt"><?php echo $item->blocktitle; ?></div>
                     </div>
                     <hr>
 
@@ -31,9 +31,6 @@ defined('_JEXEC') or die;
                             <path class="path-<?php echo $key ?>" d="<?php echo "$path" ?>"/>
                         <?php endforeach; ?>
                     </svg>
-                    <div class="block-message-wrap">
-                        <?php echo $item->blockmessage ?>
-                    </div>
                 </a>
             </li>
 

@@ -113,15 +113,6 @@
                 step="0.1"
         />
 
-
-
-        <field
-                name="blockmessage"
-                type="editor"
-                label="COM_SERVICEBLOCK_BLOCK_MESSAGE"
-                description="COM_SERVICEBLOCK_BLOCK_MESSAGE_DESC"
-                filter="raw"
-        />
     </fieldset>
     <fieldset name="status">
         <field name="state" type="list"

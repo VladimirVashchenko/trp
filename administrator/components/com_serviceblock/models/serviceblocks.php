@@ -31,7 +31,6 @@ class ServiceBlockModelServiceBlocks extends JModelList
                 'viewportheight',   's.viewportheight',
                 'viewboxwidth',     's.viewboxwidth',
                 'viewboxheight',    's.viewboxheight',
-                'blockmessage',     's.blockmessage',
                 'menuitem_id',      's.menuitem_id',
                 'state',            's.state',
                 'publish_up',       's.publish_up',
@@ -80,7 +79,6 @@ class ServiceBlockModelServiceBlocks extends JModelList
                 's.viewportheight, '.
                 's.viewboxwidth, '.
                 's.viewboxheight, '.
-                's.blockmessage, '.
                 's.menuitem_id, '.
                 's.publish_up, '.
                 's.publish_down, '.

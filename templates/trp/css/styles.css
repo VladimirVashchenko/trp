@@ -139,6 +139,9 @@ h1, h2, h3, h4, h5, h6 {
 .block p {
     color: black;
 }
+.block-title {
+    color: black;
+}
 .news-hr {
     background-color: #bababa;
 }
@@ -441,8 +444,8 @@ body, .header, #search-box, .news-content {
                         .block-title-container {
                             display: flex;
                             align-items: center;
-                            width: 100%;
-                            padding: 5px 5px;
+                            width: 210px;
+                            padding: 5px;
                         }
                         .block-title {
                             color: var(--font-color-with-background);
@@ -553,6 +556,20 @@ body, .header, #search-box, .news-content {
                 font-style: italic;
             }
 
+
+        .contact-address {
+            margin-bottom: 60px;
+        }
+            .contact-address dt {
+                float:left;
+                margin-right:10px;
+                padding:5px 0;
+                width:100px;
+            }
+            .contact-address dd {
+                margin:2px 0;
+                padding:4px 0;
+            }
 
         .category-list {
             min-height: 100%;

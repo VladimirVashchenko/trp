@@ -148,7 +148,19 @@ h1, h2, h3, h4, h5, h6 {
 .latestnews a:visited {
     color: black;
 }
+.latestnews p{
+    color: #bababa;
+}
 .content-category > form > p > span {
+    color: #bababa;
+}
+.pagination-list > .active > a {
+    color: #FF0066;
+}
+.article-title-line {
+    background-color: #bababa;
+}
+.published > time {
     color: #bababa;
 }
 .footer {
@@ -424,17 +436,18 @@ body, .header, #search-box, .news-content {
                     margin-top: 20px;
                 }
                 .block-group  a {
-                     color: black;
                      text-decoration: none;
                 }
                         .block-title-container {
-                            display:flex;
+                            display: flex;
                             align-items: center;
-                            justify-content: center;
+                            width: 100%;
                             padding: 5px 5px;
                         }
                         .block-title {
                             color: var(--font-color-with-background);
+                            text-align: center;
+                            flex: 1 100%;
                         }
                     .block hr {
                          width: 193px;
@@ -444,7 +457,7 @@ body, .header, #search-box, .news-content {
                          background-color: var(--line-color);
                      }
                     .block svg {
-                        margin: 5px 0 5px 0;
+                        margin: 20px 0;
                     }
                     .block-message-wrap {
                     padding: 10px 5px 10px 5px;
@@ -494,6 +507,8 @@ body, .header, #search-box, .news-content {
                 font-style: italic;
                 color:var(--line-color);
                 padding: 3px 0;
+                word-wrap: break-word;
+                -ms-word-wrap: break-word;
             }
         .all-news {
             text-align: right;
@@ -519,6 +534,24 @@ body, .header, #search-box, .news-content {
             width: 800px;
             margin: 30px auto;
         }
+            .page-header h2 {
+                font-size: 24px;
+                font-weight: 600;
+            }
+            .article-title-line {
+                height: 1px;
+                border: 0;
+                background-color: var(--line-color);
+                margin: 10px auto;
+            }
+            .published {
+                margin-bottom: 40px;
+            }
+            .published > time {
+                color: var(--line-color);
+                font-size: 0.75rem !important;
+                font-style: italic;
+            }
 
 
         .category-list {
@@ -545,6 +578,7 @@ body, .header, #search-box, .news-content {
 
             }
             .content-category > form > p > span {
+                font-style: italic;
                 margin-top: 4px;
                 color: var(--line-color);
                 font-size: 0.75rem !important;
@@ -562,11 +596,20 @@ body, .header, #search-box, .news-content {
                     float: left;
                     padding: 0 5px;
                 }
+                .pagination-list > .active > a {
+                    color: var(--accent-color);
+                }
+                    .page-nav a {
+                        text-decoration: none;
+                        color: black;
+                    }
 
 
 
         .footer {
-            display: inline-flex;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
             overflow: hidden;
             height: 80px;
             width:1000px;
@@ -574,26 +617,26 @@ body, .header, #search-box, .news-content {
             position: absolute;
             bottom: 0;
         }
-            .footer-link a {
-                vertical-align: middle;
-                text-decoration: none;
-            }
-                .footer p {
-                }
-                .footer-link svg {
-                    margin:5px 0;
-                }
             .footer-link {
-                margin:auto;
                 text-align: center;
-                display: inline-block;
                 background-color: var(--theme-color);
                 -webkit-transition: transform var(--transitions-transform);
                 -moz-transition: transform var(--transitions-transform);
                 -o-transition: transform var(--transitions-transform);
                 transition: transform var(--transitions-transform);
-                vertical-align: middle;
             }
             .footer-link:hover {
                 transform: scale(1.05);
             }
+                .footer-link a {
+                    vertical-align: middle;
+                    text-decoration: none;
+                }
+                .footer-link > a > div {
+                    height: auto;
+                }
+                .footer p {
+                }
+                .footer-link svg {
+                    margin:5px 0;
+                }

@@ -4,16 +4,6 @@ $doc = JFactory::getDocument();
 $doc->addStylesheet(JUri::base(TRUE) . '/templates/' . $doc->template . '/css/styles.css');
 $app = JFactory::getApplication();
 $options = $app->input->getVar('option');
-
-
-
-
-//var_dump($options);
-//var_dump(JUri::base());
-
-
-
-
 $templateparams = $app->getTemplate(true)->params;
 $this->addStyleDeclaration("
 :root{

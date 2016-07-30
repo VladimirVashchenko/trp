@@ -649,6 +649,9 @@ body, .header, #search-box, .news-content {
                     margin:5px 0;
                 }
 
+.result-created {
+    margin-bottom: 20px;
+}
 
 
 .ie9 .block {

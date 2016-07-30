@@ -36,6 +36,7 @@ $this->addStyleDeclaration("
     <jdoc:include type="head"/>
 </head>
 
+<!--[if IE 9 ]> <body class="ie9"> <![endif]-->
 <body>
 <div class="main-div">
     <div class="header">

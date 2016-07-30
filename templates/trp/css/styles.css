@@ -407,14 +407,15 @@ body, .header, #search-box, .news-content {
         .block-group{
             margin-bottom: 20px;
         }
+
             .block-group > ul  {
                 display: flex;
                 flex-wrap: wrap;
+                justify-content: space-between;
             }
-            .block-group > ul > li {
-                display: flex;
-            }
+
             .block{
+                display: flex;
                 width: 220px;
                 text-align: center;
                 background-color: var(--theme-color);
@@ -427,15 +428,7 @@ body, .header, #search-box, .news-content {
             .block:hover{
                 transform: scale(1.02);
             }
-                .block-group > ul > li:nth-child(4n+2) {
-                    margin-left: 40px;
-                    margin-right: 20px;
-                }
-                .block-group > ul > li:nth-child(4n+3) {
-                    margin-left: 20px;
-                    margin-right: 40px;
-                }
-                .block-group > ul > li:nth-child(n+5){
+                .block:nth-child(n+5){
                     margin-top: 20px;
                 }
                 .block-group  a {
@@ -468,8 +461,6 @@ body, .header, #search-box, .news-content {
                     .block-message-wrap p{
                         margin: 0;
                     }
-
-
 
         .news{
             margin-bottom: 20px;
@@ -657,3 +648,42 @@ body, .header, #search-box, .news-content {
                 .footer-link svg {
                     margin:5px 0;
                 }
+
+
+
+.ie9 .block {
+    display: inline-block;
+}
+
+    .ie9 .block:nth-child(4n+2) {
+        margin-left: 40px;
+        margin-right: 20px;
+    }
+    .ie9 .block:nth-child(4n+3) {
+        margin-left: 20px;
+        margin-right: 40px;
+    }
+
+.ie9 .footer {
+    text-align: center;
+}
+    .ie9 .footer-link {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .ie9 .footer-link:nth-child(5n+1) {
+        margin-right: 40px;
+    }
+    .ie9 .footer-link:nth-child(5n+2) {
+        margin: 0 40px;
+    }
+    .ie9 .footer-link:nth-child(5n+3) {
+        margin: 0 40px;
+    }
+    .ie9 .footer-link:nth-child(5n+4) {
+        margin: 0 40px;
+    }
+    .ie9 .footer-link:nth-child(5n+5) {
+        margin-left: 40px;
+    }

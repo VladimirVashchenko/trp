@@ -11,13 +11,10 @@ defined('_JEXEC') or die;
 ?>
 
 <div class="block-group">
-    <ul>
-    <?php foreach ($this->items as $item) :
+    <ul><?php foreach ($this->items as $item) :
         $regex = '/d="\s*([^\/\>]+)"/';
         preg_match_all($regex, $item->svgpath, $out);
-        ?>
-
-            <li class="block">
+        ?><li class="block">
                 <a href="<?php echo $item->link?>">
                     <div class="block-title-container" style="min-height: <?php echo $item->blocktitle_height ?>px">
                         <div class="block-title" style="font-size: <?php echo $item->blocktitle_size?>pt"><?php echo $item->blocktitle; ?></div>
@@ -32,8 +29,5 @@ defined('_JEXEC') or die;
                         <?php endforeach; ?>
                     </svg>
                 </a>
-            </li>
-
-    <?php endforeach; ?>
-    </ul>
+            </li><?php endforeach; ?></ul>
 </div>

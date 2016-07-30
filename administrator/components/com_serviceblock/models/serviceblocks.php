@@ -25,18 +25,15 @@ class ServiceBlockModelServiceBlocks extends JModelList
             $config['filter_fields'] = array(
                 'id',               's.id',
                 'blocktitle',       's.blocktitle',
-                'catid',            's.catid',
                 'svgpath',          's.svgpath',
                 'viewportwidth',    's.viewportwidth',
                 'viewportheight',   's.viewportheight',
                 'viewboxwidth',     's.viewboxwidth',
                 'viewboxheight',    's.viewboxheight',
-                'menuitem_id',      's.menuitem_id',
                 'state',            's.state',
                 'publish_up',       's.publish_up',
                 'publish_down',     's.publish_down',
-                'title',            'c.title',
-                'link',             'm.link'
+                'title',            'c.title'
             );
         }
 
@@ -73,17 +70,14 @@ class ServiceBlockModelServiceBlocks extends JModelList
                 's.id, '.
                 's.blocktitle, '.
                 's.state, '.
-                's.catid, '.
                 's.svgpath, '.
                 's.viewportwidth, '.
                 's.viewportheight, '.
                 's.viewboxwidth, '.
                 's.viewboxheight, '.
-                's.menuitem_id, '.
                 's.publish_up, '.
                 's.publish_down, '.
-                'c.title, '.
-                'm.link'
+                'c.title'
             )
         );
         $query->from($db->quoteName('#__serviceblock') . ' AS s');

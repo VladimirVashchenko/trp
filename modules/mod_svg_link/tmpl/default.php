@@ -6,7 +6,7 @@
 $regex = '/d=\s*([^\/\>]+)/';
 preg_match_all($regex, $svgpath, $out);
 ?>
-<a href="<?php echo JUri::base().$link;?>">
+<a href="<?php echo $link;?>" target="<?php echo $target;?>">
     <div>
         <?php if ($svgpath): ?>
             <svg xmlns="http://www.w3.org/2000/svg" width="<?php echo $viewportwidth ?>"

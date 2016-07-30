@@ -11,6 +11,7 @@ class ModSvgLinkHelper
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
         $query->select('
+        l.menuitem_id,
         l.linktitle,
         l.linktitle_size, 
         l.svgpath, 
@@ -20,9 +21,9 @@ class ModSvgLinkHelper
         l.viewboxwidth, 
         l.viewboxheight, 
         l.show_title, 
-        m.alias, 
-        m.type, 
-        m.home
+        m.link,
+        m.type,
+        m.params
         ');
         $query->from($db->quoteName('#__svglink', 'l'));
         $query->join('LEFT', $db->quoteName('#__menu', 'm'). ' ON '. $db->quoteName('l.menuitem_id') . ' = '. $db->quoteName('m.id'));

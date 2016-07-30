@@ -30,6 +30,7 @@ class ServiceBlockModelServiceCategory extends JModelList
         {
             $config['filter_fields'] = array(
                 'id',                's.id',
+                'menuitem_id',       's.menuitem_id',
                 'blocktitle',        's.blocktitle',
                 'blocktitle_size',   's.blocktitle_size',
                 'blocktitle_height', 's.blocktitle_height',
@@ -45,7 +46,9 @@ class ServiceBlockModelServiceCategory extends JModelList
                 'publish_up',        's.publish_up',
                 'publish_down',      's.publish_down',
                 'title',             'c.title',
-                'link',              'm.link'
+                'link, ',            'm.link, ',
+                'type, ',            'm.type, ',
+                'params',            'm.params'
             );
         }
         parent::__construct($config);
@@ -61,6 +64,7 @@ class ServiceBlockModelServiceCategory extends JModelList
         $query->select(
             $this->getState(
                 'list.select',
+                's.menuitem_id, '.
                 's.blocktitle, '.
                 's.blocktitle_size, '.
                 's.blocktitle_height, '.
@@ -73,7 +77,9 @@ class ServiceBlockModelServiceCategory extends JModelList
                 's.blockmessage, '.
                 's.menuitem_id, '.
                 's.state, '.
-                'm.link'
+                'm.link, '.
+                'm.type, '.
+                'm.params'
             )
         );
 
